@@ -1,3 +1,7 @@
+import json
+import pkgutil
+
+
 def abs_span_dist(m1, m2):
     s1 = m1.span
     s2 = m2.span
@@ -45,3 +49,8 @@ def find_non_overlapping_results(matches):
                 spans.add(span)
             results.append(result)
     return results
+
+
+def load_locale(language):
+    locale = pkgutil.get_data("data.money", "{}.json".format(language.lower()))
+    return json.loads(locale.decode('utf-8'))

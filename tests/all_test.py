@@ -1,8 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from natural_money import Finder
-from natural_money import LOCALES
+import os
+import json
 import pytest
+from natural_money import Finder
+from natural_money.utils import load_locale
+
+LOCALES = {}
+for name in os.listdir("data/money"):
+    if name.endswith(".json"):
+        language = name.split(".json")[0]
+        LOCALES[language] = load_locale(language)
 
 default_money = Finder(converter=None)
 
