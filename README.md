@@ -18,6 +18,12 @@ mf.find("In Australia, 500 dollars recently became worth less")
 # Money(value=500.0, currency='AUD', matches=['Australia', '500', 'dollars'], base='EUR', base_amount=336.089, ...)
 ```
 
+## Install
+
+Tested for 2.7 and 3.5:
+
+    pip install natural_money
+
 ## Features
 
 - **base_currency**: can be changed using `Finder(base_currency="USD")`
