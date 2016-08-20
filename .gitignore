@@ -1,0 +1,17 @@
+*.pyc
+*#*
+*.DS_STORE
+*.log
+*flymake*
+dist/*
+*egg*
+build/
+__pycache__/
+/.Python
+/bin/
+/include/
+/lib/
+/pip-selfcheck.json
+.tox/
+.cache/
+example_data/

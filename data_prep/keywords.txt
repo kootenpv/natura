@@ -1,0 +1,8 @@
+buy
+sell
+amount
+lend
+borrow
+invest
+spend
+fund
