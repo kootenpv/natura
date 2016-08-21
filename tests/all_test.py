@@ -18,7 +18,8 @@ CURRENT_BAD = [u'.د.ب', u'US$']
 
 
 def proove(x, y):
-    return x.value == y[0] and x.currency == y[1] and len(x.spans) == y[2]
+    value, currency, spans = y
+    return x.value == value and x.currency == currency and len(x.spans) == spans
 
 
 def get_default(symbols):
@@ -176,6 +177,17 @@ def test_misformed1():
 def test_misformed2():
     t = "500-dollars"
     generic_test(t, None, [500, 'USD', 2])
+
+
+def test_comma():
+    t = "5,000 dollars"
+    generic_test(t, None, [5000, 'USD', 2])
+
+
+def test_decimal_points():
+    t = "5.50 dollars"
+    generic_test(t, None, [5.50, 'USD', 2])
+
 
 currency_types = ['symbols', 'currencies']
 money_strings = [u"500{ms}", u"500 {ms}", u"asdf500 {ms}"]

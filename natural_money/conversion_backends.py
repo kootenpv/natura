@@ -27,8 +27,8 @@ class BaseExchangeRate():
 
     def get(self, from_currency, to_currency):
         now = datetime.now()
-        query = "select last_updated,factor from {} \
-                 WHERE currency_from=? AND currency_to=? ORDER BY last_updated desc"
+        query = "SELECT last_updated,factor FROM {} \
+                 WHERE currency_from=? AND currency_to=? ORDER BY last_updated DESC"
         query = query.format(self.__class__.__name__)
         res = self.c.execute(query, (from_currency, to_currency)).fetchone()
         # either new or too old
@@ -104,24 +104,22 @@ class FixerIOExchangeRate(BaseExchangeRate):
 
     def update_conversion(self, from_currency, to_currency):
         resp = requests.get("http://api.fixer.io/latest?base={}".format(to_currency))
-        if resp.status_code == 200:
-            table_name = self.__class__.__name__
-            rates = resp.json().get('rates', None)
-            if rates is None:
-                msg = "{}: Rates not available for '{}'"
-                raise TypeError(msg.format(table_name, to_currency))
-            dt = datetime.now()
-            for curr, factor in rates.items():
-                self.save_double(to_currency, curr, factor, dt)
+        resp.raise_for_status()
+        table_name = self.__class__.__name__
+        rates = resp.json().get('rates', None)
+        if rates is None:
+            msg = "{}: Rates not available for '{}'"
+            raise TypeError(msg.format(table_name, to_currency))
+        dt = datetime.now()
+        for curr, factor in rates.items():
+            self.save_double(to_currency, curr, factor, dt)
 
-            factor1 = rates.get(from_currency, None)
-            if factor1 is None:
-                msg = "{}: Pair '{}':'{}' is unknown, trying again in 1 month"
-                print(msg.format(table_name, from_currency, to_currency))
-                dt, factor1 = dt + relativedelta(months=1), -1
-                self.save_double(to_currency, from_currency, factor1, dt)
-            else:
-                factor1 = float(factor1)
+        factor1 = rates.get(from_currency, None)
+        if factor1 is None:
+            msg = "{}: Pair '{}':'{}' is unknown, trying again in 1 month"
+            print(msg.format(table_name, from_currency, to_currency))
+            dt, factor1 = dt + relativedelta(months=1), -1
+            self.save_double(to_currency, from_currency, factor1, dt)
         else:
-            resp.raise_for_status()
+            factor1 = float(factor1)
         return factor1, dt
