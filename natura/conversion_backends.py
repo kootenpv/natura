@@ -27,7 +27,7 @@ class BaseExchangeRate():
 
     def get(self, from_currency, to_currency):
         now = datetime.now()
-        query = "SELECT last_updated,factor FROM {} \
+        query = "SELECT factor,last_updated FROM {} \
                  WHERE currency_from=? AND currency_to=? ORDER BY last_updated DESC"
         query = query.format(self.__class__.__name__)
         res = self.c.execute(query, (from_currency, to_currency)).fetchone()
@@ -35,7 +35,7 @@ class BaseExchangeRate():
         if res is None or res[0] + relativedelta(days=1) < now:
             # fetch
             res = self.update_conversion(from_currency, to_currency)
-        last_modified, factor = res
+        factor, last_modified = res
         return factor, last_modified
 
     def save_double(self, from_currency, to_currency, factor1, dt):
@@ -77,7 +77,7 @@ class FxExchangeRate(BaseExchangeRate):
             factor1 = self.get_conversion_factor(from_currency, to_currency, xml)
             dt = self.get_last_updated(xml)
         else:
-            dt, factor1 = datetime.now() + relativedelta(months=1), -1
+            factor1, dt = -1, datetime.now() + relativedelta(months=1)
         self.save_double(from_currency, to_currency, factor1, dt)
         return factor1, dt
 
@@ -118,7 +118,7 @@ class FixerIOExchangeRate(BaseExchangeRate):
         if factor1 is None:
             msg = "{}: Pair '{}':'{}' is unknown, trying again in 1 month"
             print(msg.format(table_name, from_currency, to_currency))
-            dt, factor1 = dt + relativedelta(months=1), -1
+            factor1, dt = -1, dt + relativedelta(months=1)
             self.save_double(to_currency, from_currency, factor1, dt)
         else:
             factor1 = float(factor1)
