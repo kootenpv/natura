@@ -32,7 +32,7 @@ class BaseExchangeRate():
         query = query.format(self.__class__.__name__)
         res = self.c.execute(query, (from_currency, to_currency)).fetchone()
         # either new or too old
-        if res is None or res[0] + relativedelta(days=1) < now:
+        if res is None or res[1] + relativedelta(days=1) < now:
             # fetch
             res = self.update_conversion(from_currency, to_currency)
         factor, last_modified = res

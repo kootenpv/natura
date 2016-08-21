@@ -28,9 +28,9 @@ class Finder(object):
         self.set_scanner()
         sm, _ = self.scanner.scan(text)
         results = []
-        for s, c in [(sm, Abbrev), (reversed(sm), Abbrev), (sm, Symbol),
-                     (reversed(sm), Symbol), (reversed(sm), Currency)]:
-            for x in self.get_money(s, c, text):
+        for entity, check_class in [(sm, Abbrev), (reversed(sm), Abbrev), (sm, Symbol),
+                                    (reversed(sm), Symbol), (reversed(sm), Currency)]:
+            for x in self.get_money(entity, check_class, text):
                 if not min_amount < x.value < max_amount:
                     continue
                 if single:
