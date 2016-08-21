@@ -49,7 +49,7 @@ class BaseExchangeRate():
     def update_conversion(self, from_currency, to_currency):
         raise NotImplementedError()
 
-    def get_connection_cursor(self, base_path=os.path.expanduser("~/natural_money")):
+    def get_connection_cursor(self, base_path=os.path.expanduser("~/natura")):
         if not os.path.exists(base_path):
             os.makedirs(base_path)
         path = os.path.join(base_path, "conversions.db")

@@ -6,11 +6,11 @@ MINOR_VERSION = '0'
 MICRO_VERSION = '1'
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
-setup(name='natural_money',
+setup(name='natura',
       version=VERSION,
       description="Find money / currencies talk",
       author='Pascal van Kooten',
-      url='https://github.com/kootenpv/natural_money',
+      url='https://github.com/kootenpv/natura',
       author_email='kootenpv@gmail.com',
       package_data={
           # If any package contains *.txt or *.rst files, include them:

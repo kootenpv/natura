@@ -1,5 +1,5 @@
 from collections import namedtuple
-from natural_money.classes import *
+from natura.classes import *
 
 
 class Base():

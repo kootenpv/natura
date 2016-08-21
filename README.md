@@ -1,9 +1,11 @@
-## natural_money
+## natura
+
+> natura: pun based on "paying in **natura**" and detecting money in **natura**l language.
 
 Find and convert money amounts in text.
 
 ```python
-from natural_money import Finder
+from natura import Finder
 mf = Finder()
 mf.findall("500 EUR $500 and five hundred yen")
 # [Money(value=500.0, currency='EUR', matches=['500', 'EUR'], base_amount=500.0, base='EUR', ...),
@@ -22,7 +24,7 @@ mf.find("In Australia, 500 dollars recently became worth less")
 
 Tested for 2.7 and 3.5:
 
-    pip install natural_money
+    pip install natura
 
 ## Features
 

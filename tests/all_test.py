@@ -3,8 +3,8 @@
 import os
 import json
 import pytest
-from natural_money import Finder
-from natural_money.utils import load_locale
+from natura import Finder
+from natura.utils import load_locale
 
 LOCALES = {}
 for name in os.listdir("data/money"):

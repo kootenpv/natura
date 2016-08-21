@@ -1,10 +1,10 @@
 import re
-from natural_money.utils import guess_currency
-from natural_money.utils import load_locale
-from natural_money.utils import find_non_overlapping_results
-from natural_money.conversion_backends import FixerIOExchangeRate
-from natural_money.classes import *
-from natural_money.scanner import Scanner
+from natura.utils import guess_currency
+from natura.utils import load_locale
+from natura.utils import find_non_overlapping_results
+from natura.conversion_backends import FixerIOExchangeRate
+from natura.classes import *
+from natura.scanner import Scanner
 
 
 class Finder(object):

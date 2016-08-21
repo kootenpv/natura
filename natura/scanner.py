@@ -1,5 +1,5 @@
 import re
-from natural_money.classes import *
+from natura.classes import *
 
 
 def pipe(ls, pre=r'(?<![^0-9 -])', post=r'(?![^0-9 -])'):
