@@ -58,5 +58,4 @@ class Scanner():
             result = float(x.replace(",", ""))
         elif re.match(r"^-?[0-9]+\.[0-9]+$", x):
             result = float(x)
-        result = Amount(result, scanner.match.span()) if result else None
-        return result
+        return Amount(result, scanner.match.span()) if result else None

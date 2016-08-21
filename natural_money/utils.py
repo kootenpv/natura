@@ -10,9 +10,8 @@ def abs_span_dist(m1, m2):
 
 def get_keyword(m, clues):
     if clues:
-        return sorted(clues, key=lambda x: abs_span_dist(x, m))[0]
-    else:
-        return None
+        return min(clues, key=lambda x: abs_span_dist(x, m))
+    return None
 
 
 def get_default_currency(options):
@@ -34,7 +33,6 @@ def guess_currency(m, clues, locale):
             if opt[0] == keyword.converted:
                 currency = opt[0]
                 return keyword, currency
-                break
 
     keyword = None
     return keyword, get_default_currency(options)
@@ -44,9 +42,8 @@ def find_non_overlapping_results(matches):
     results = []
     spans = set()
     for result in matches:
-        if not any([any([a <= x < b or a <= y < b for a, b in spans]) for x, y in result.spans]):
-            for span in result.spans:
-                spans.add(span)
+        if not any(any(a <= x < b or a <= y < b for a, b in spans) for x, y in result.spans):
+            spans.update(result.spans)
             results.append(result)
     return results
 
