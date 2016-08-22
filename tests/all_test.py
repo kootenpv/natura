@@ -179,6 +179,11 @@ def test_new_symbol():
     generic_test(t, None, [10, 'USD', 2])
 
 
+def test_new_symbol2():
+    t = "$A10"
+    generic_test(t, None, [10, 'AUD', 2])
+
+
 def test_numeric_then_unit():
     t = "$US10b"
     generic_test(t, None, [10**10, 'USD', 3])

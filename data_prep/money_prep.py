@@ -163,6 +163,7 @@ for k, v in list(new_symbols.items()):
 
 # add known missing
 new_symbols['$US'] = [["USD", True]]
+new_symbols['$A'] = [["AUD", True]]
 
 
 data = {'symbols': new_symbols,
