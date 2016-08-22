@@ -2,7 +2,7 @@ import re
 from natura.classes import *
 
 
-def pipe(ls, pre=r'(?<![^0-9 -])', post=r'(?![^0-9 -])'):
+def pipe(ls, pre=r'(?<![a-zA-Z])', post=r'(?![a-zA-Z])'):
     # this is flipped
     p = post + "|" + pre
     return pre + p.join(sorted(ls, key=len, reverse=True)) + post

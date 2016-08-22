@@ -164,6 +164,16 @@ def test_symbol7():
     generic_test(t, None, [500, 'ZWD', 2])
 
 
+def test_symbol7():
+    t = "(£2,386)"
+    generic_test(t, None, [2386, 'GBP', 2])
+
+
+def test_symbol8():
+    t = "'£2,386'"
+    generic_test(t, None, [2386, 'GBP', 2])
+
+
 def test_from_to1():
     t = "from 500 Z$ to 500 USD"
     generic_test(t, None, [500, 'ZWD', 2], [500, 'USD', 2])
