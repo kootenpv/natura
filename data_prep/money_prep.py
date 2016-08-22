@@ -161,6 +161,10 @@ for k, v in list(new_symbols.items()):
     if k not in new_symbols:
         new_symbols[k] = v
 
+# add known missing
+new_symbols['$US'] = [["USD", True]]
+
+
 data = {'symbols': new_symbols,
         'currencies': currencies,
         'keywords': keywords,

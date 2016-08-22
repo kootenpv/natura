@@ -82,7 +82,7 @@ class Finder(object):
                 strike += 1
             elif strike < 2 and isinstance(m, (Amount, TextAmount)):
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
-                strike = 0 if isinstance(m, TextAmount) else 100
+                strike = 0
                 start_ends[-1].append(m.span)
         # sort inner spans
         for se in start_ends:

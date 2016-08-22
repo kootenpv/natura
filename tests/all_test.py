@@ -174,6 +174,16 @@ def test_symbol8():
     generic_test(t, None, [2386, 'GBP', 2])
 
 
+def test_new_symbol():
+    t = "$US10"
+    generic_test(t, None, [10, 'USD', 2])
+
+
+def test_numeric_then_unit():
+    t = "$US10b"
+    generic_test(t, None, [10**10, 'USD', 3])
+
+
 def test_from_to1():
     t = "from 500 Z$ to 500 USD"
     generic_test(t, None, [500, 'ZWD', 2], [500, 'USD', 2])
