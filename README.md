@@ -1,5 +1,9 @@
 ## natura
 
+[![Build Status](https://travis-ci.org/kootenpv/natura.svg?branch=master)](https://travis-ci.org/kootenpv/natura)
+[![PyPI](https://img.shields.io/pypi/v/natura.svg?style=flat-square)](https://pypi.python.org/pypi/natura/)
+[![PyPI](https://img.shields.io/pypi/pyversions/natura.svg?style=flat-square)](https://pypi.python.org/pypi/natura/)
+
 > natura: pun based on "paying in **natura**" and detecting money in **natura**l language.
 
 Find and convert money amounts in text.
