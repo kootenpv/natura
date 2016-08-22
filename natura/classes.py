@@ -1,39 +1,16 @@
 from collections import namedtuple
-from natura.classes import *
 
 
-class Base():
-
-    def __init__(self, x, span):
-        self.x = x
-        self.span = span
-
-    def __repr__(self):
-        return "{}(x={}, span={})".format(self.__class__.__name__, self.x, self.span)
+def node(name):
+    return namedtuple(name, "x,span")
 
 
-class Symbol(Base):
-    pass
-
-
-class Currency(Base):
-    pass
-
-
-class Amount(Base):
-    pass
-
-
-class TextAmount(Base):
-    pass
-
-
-class Abbrev(Base):
-    pass
-
-
-class Skipper(Base):
-    pass
+Symbol     = node("Symbol")
+Currency   = node("Currency")
+Amount     = node("Amount")
+TextAmount = node("TextAmount")
+Abbrev     = node("Abbrev")
+Skipper    = node("Skipper")
 
 
 class Keyword():
