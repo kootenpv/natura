@@ -165,12 +165,12 @@ def test_symbol7():
 
 
 def test_symbol7():
-    t = "(£2,386)"
+    t = u"(£2,386)"
     generic_test(t, None, [2386, 'GBP', 2])
 
 
 def test_symbol8():
-    t = "'£2,386'"
+    t = u"'£2,386'"
     generic_test(t, None, [2386, 'GBP', 2])
 
 
