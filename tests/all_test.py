@@ -184,6 +184,11 @@ def test_new_symbol2():
     generic_test(t, None, [10, 'AUD', 2])
 
 
+def test_symbol_dot():
+    t = "7P."
+    generic_test(t, None, [7, 'BYR', 2])
+
+
 def test_numeric_then_unit():
     t = "$US10b"
     generic_test(t, None, [10**10, 'USD', 3])
@@ -294,3 +299,23 @@ def test_default_exchange():
         assert mp[0].last_modified_base is not None
     except sqlite3.OperationalError:
         print("skipping sqlite on remote")
+
+
+def test_local():
+    d = "/Users/pascal/sky_view_collections/www.news.com.au/"
+    if not os.path.isdir(d):
+        return
+    from natura import Finder
+    import justext
+    import json
+
+    default_money = Finder()
+
+    stoplist = justext.get_stoplist("english")
+    for fn in os.listdir(d):
+        with open(d + fn) as f:
+            data = json.load(f)
+            body_content = "\n".join([x.text for x in justext.justext(data["html"], stoplist)
+                                      if not x.is_boilerplate and not x.is_heading])
+            if "$" in body_content:
+                assert default_money.findall(body_content)

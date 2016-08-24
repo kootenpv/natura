@@ -128,9 +128,10 @@ def set_default(obj):
     raise TypeError
 
 units = {
+    'trillion': 10**12, 'b': 10**9, 'bn': 10**9,
+    'billion': 10**9, 'b': 10**9, 'bn': 10**9,
     'million': 10**6, 'm': 10**6, 'mn': 10**6, 'mil': 10**6,
     'thousand': 10**3, 'k': 10**3,
-    'billion': 10**9, 'b': 10**9, 'bn': 10**9,
     'hundred': 10**2,
     'ninety': 90, 'eighty': 80, 'seventy': 70, 'sixty': 60, 'fifty': 50,
     'fourty': 40, 'thirty': 30, 'twenty': 20,
@@ -145,6 +146,10 @@ units = {
 
 if '' in keywords:
     keywords.pop("")
+
+for m in ['m', 'M']:
+    if m in new_symbols:
+        new_symbols.pop(m)
 
 abbrevs = set()
 for vs in new_symbols.values():

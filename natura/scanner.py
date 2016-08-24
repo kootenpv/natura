@@ -21,12 +21,13 @@ class Scanner():
             (r'-?[0-9.,]+', self.to_number_regex),
             (r' |-', self.echo_regex),
             (pipe(self.locale['units']), self.units_regex),
-            (r'.', lambda y, x: Skipper(x, y.match.span()))
-        ]).scan
+            (r'.', lambda y, x: Skipper(x, y.match.span())),
+            (r'\n', lambda y, x: Skipper(x, y.match.span()))
+        ], re.MULTILINE).scan
 
     def symbols_to_regex(self):
-        escape_dollars = [x.replace("$", r"\$") for x in self.locale['symbols']]
-        return pipe(escape_dollars)
+        esc = [x.replace("$", r"\$").replace(".", r"\.") for x in self.locale['symbols']]
+        return pipe(esc)
 
     def currency_regex(self, scanner, x):
         span = scanner.match.span()
