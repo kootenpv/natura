@@ -170,6 +170,7 @@ for k, v in list(new_symbols.items()):
 new_symbols['$US'] = [["USD", True]]
 new_symbols['$A'] = [["AUD", True]]
 
+currencies['bucks'] = currencies['dollar']
 
 data = {'symbols': new_symbols,
         'currencies': currencies,
