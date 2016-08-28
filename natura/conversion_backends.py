@@ -44,7 +44,10 @@ class BaseExchangeRate():
         sql = sql.format(self.__class__.__name__)
         self.c.execute(sql, (dt, from_currency, to_currency, factor1,
                              dt, to_currency, from_currency, 1 / factor1))
-        self.conn.commit()
+        try:
+            self.conn.commit()
+        except sqlite3.OperationalError:
+            print("cannot write")
 
     def update_conversion(self, from_currency, to_currency):
         raise NotImplementedError()
