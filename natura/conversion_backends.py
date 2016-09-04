@@ -40,7 +40,7 @@ class BaseExchangeRate():
 
     def save_double(self, from_currency, to_currency, factor1, dt):
         # make it upsert instead
-        sql = "insert into {} values (?, ?, ?, ?), (?, ?, ?, ?)"
+        sql = "INSERT INTO {} VALUES (?, ?, ?, ?), (?, ?, ?, ?)"
         sql = sql.format(self.__class__.__name__)
         self.c.execute(sql, (dt, from_currency, to_currency, factor1,
                              dt, to_currency, from_currency, 1 / factor1))
@@ -67,6 +67,11 @@ class BaseExchangeRate():
         except sqlite3.OperationalError:
             pass
         return conn, c, path
+
+    def drop_all(self):
+        if os.path.exists(self.path):
+            os.remove(self.path)
+        self.conn, self.c, self.path = self.get_connection_cursor()
 
 
 class FxExchangeRate(BaseExchangeRate):

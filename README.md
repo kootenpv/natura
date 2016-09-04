@@ -24,6 +24,14 @@ mf.find("In Australia, 500 dollars recently became worth less")
 # Money(value=500.0, currency='AUD', matches=['Australia', '500', 'dollars'], base='EUR', base_amount=336.089, ...)
 ```
 
+Have access to the spans of the matches:
+
+```python
+res = mf.find("In Australia, 500 dollars recently became worth less")
+res.spans
+# [(3, 12), (14, 17), (18, 25)]
+```
+
 ## Install
 
 Tested for 2.7 and 3.5:
