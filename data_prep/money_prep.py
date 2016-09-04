@@ -147,7 +147,7 @@ units = {
 if '' in keywords:
     keywords.pop("")
 
-for m in ['m', 'M']:
+for m in ['m', 'M', 'q', 'Q']:
     if m in new_symbols:
         new_symbols.pop(m)
 
