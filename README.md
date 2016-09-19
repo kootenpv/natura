@@ -32,6 +32,11 @@ res.spans
 # [(3, 12), (14, 17), (18, 25)]
 ```
 
+for example, for display:
+
+In **Australia**, *500* **dollars** recently became worth less
+
+
 ## Install
 
 Tested for 2.7 and 3.5:

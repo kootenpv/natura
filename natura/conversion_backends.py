@@ -130,4 +130,4 @@ class FixerIOExchangeRate(BaseExchangeRate):
             self.save_double(to_currency, from_currency, factor1, dt)
         else:
             factor1 = float(factor1)
-        return factor1, dt
+        return 1 / factor1, dt
