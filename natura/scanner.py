@@ -53,7 +53,9 @@ class Scanner():
     @staticmethod
     def to_number_regex(scanner, x):
         result = None
-        if re.match("^-?[0-9]+$", x):
+        if not re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(\.[0-9]{2})?$", x):
+            result = None
+        elif re.match("^-?[0-9]+$", x):
             result = float(x)
         elif re.match("^-?[0-9]{1,3}(,[0-9]{3})*([.][0-9]+)*$", x):
             result = float(x.replace(",", ""))
