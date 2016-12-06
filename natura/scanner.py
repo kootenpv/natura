@@ -23,7 +23,7 @@ class Scanner():
             (pipe(self.locale['units']), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
             (r'\n', lambda y, x: Skipper(x, y.match.span()))
-        ], re.MULTILINE).scan
+        ], re.MULTILINE | re.IGNORECASE).scan
 
     def symbols_to_regex(self):
         esc = [x.replace("$", r"\$").replace(".", r"\.") for x in self.locale['symbols']]
@@ -33,8 +33,10 @@ class Scanner():
         span = scanner.match.span()
         if x in self.locale['currencies']:
             return Currency(x, span=span)
+        elif x.lower() in self.locale['currencies']:
+            return Currency(x.lower(), span=span)
         else:
-            return Currency(x[:-1], span=span)
+            return Currency(x[:-1].lower(), span=span)
 
     @staticmethod
     def symbol_regex(scanner, x):
@@ -45,9 +47,11 @@ class Scanner():
         return None
 
     def units_regex(self, scanner, x):
-        return TextAmount(float(self.locale['units'][x]), scanner.match.span())
+        return TextAmount(float(self.locale['units'][x.lower()]), scanner.match.span())
 
     def handle_keyword(self, scanner, x):
+        if x not in self.locale['keywords']:
+            return None
         return Keyword(x, self.locale['keywords'][x], scanner.match.span())
 
     @staticmethod

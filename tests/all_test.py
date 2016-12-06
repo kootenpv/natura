@@ -14,7 +14,7 @@ for name in os.listdir("data/money"):
 
 default_money = Finder(converter=None)
 
-CURRENT_BAD = [u'.د.ب', u'US$']
+CURRENT_BAD = [u'.د.ب', u'US$', 'Lek', 'LEK']
 
 
 def proove(x, y):
@@ -97,6 +97,11 @@ def test_textual_amount2():
 def test_duplicate():
     t = "3 people at most $500 dollars june 2018"
     generic_test(t, None, [500, 'USD', 2])
+
+
+def test_uppercase():
+    t = "$2 Million"
+    generic_test(t, None, [2000000, 'USD', 3])
 
 
 def test_yen():

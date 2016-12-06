@@ -23,12 +23,15 @@ def guess_currency(m, clues, locale):
 
     if m.x in locale['currencies']:
         options = locale['currencies'][m.x]
+    elif m.x.lower() in locale['currencies']:
+        options = locale['currencies'][m.x]
     elif m.x in locale['symbols']:
         options = locale['symbols'][m.x]
-    else:
+    elif m.x.upper() in locale['symbols']:
         options = locale['symbols'][m.x.upper()]
-
-    if keyword is not None:
+    else:
+        options = []
+    if keyword is not None and options:
         for opt in options:
             if opt[0] == keyword.converted:
                 currency = opt[0]
