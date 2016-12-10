@@ -53,8 +53,7 @@ class Finder(object):
 
     def replace(self, text, replace_with="NATURA", min_amount=-float("inf"), max_amount=float("inf"),
                 numeric_to_money=False, single=False):
-        found = self.findall(text, min_amount=-float("inf"), max_amount=float("inf"),
-                             numeric_to_money=False, single=False)
+        found = self.findall(text, min_amount, max_amount, numeric_to_money, single)
         if single:
             found = [found]
         spans = []
