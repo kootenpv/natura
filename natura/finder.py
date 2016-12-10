@@ -57,6 +57,8 @@ class Finder(object):
         if single:
             found = [found]
         spans = []
+        if not found:
+            return text
         for x in found:
             spans.append((x.spans[0][0], x.spans[-1][1]))
         spans.sort()
