@@ -6,7 +6,8 @@ usd_min = set([x[0] for x in usm['symbols']["$"]] +
 
 usm['keywords'] = {k: v for k, v in usm['keywords'].items() if v in usd_min}
 usm['symbols'] = {"$": usm['symbols']['$']}
-usm['currencies'] = {"$": usm['currencies']['dollar']}
+usm['currencies'] = {"dollar": usm['currencies']['dollar']}
+usm['currencies'] = {"bucks": usm['currencies']['bucks']}
 usm['abbrevs'] = [x for x in usm['abbrevs'] if x in usm['keywords'].values()]
 
-usm = just.read("data/money/us_min.json")
+usm = just.write(usm, "data/money/us_min.json")
