@@ -1,3 +1,4 @@
+#prevent ['$', '1', 'M', '2', 'M']
 import re
 from natura.utils import guess_currency
 from natura.utils import load_locale
@@ -49,6 +50,25 @@ class Finder(object):
             return None
 
         return sorted(results, key=lambda x: x.spans)
+
+    def replace(self, text, replace_with="NATURA", min_amount=-float("inf"), max_amount=float("inf"),
+                numeric_to_money=False, single=False):
+        found = self.findall(text, min_amount=-float("inf"), max_amount=float("inf"),
+                             numeric_to_money=False, single=False)
+        if single:
+            found = [found]
+        spans = []
+        for x in found:
+            spans.append((x.spans[0][0], x.spans[-1][1]))
+        spans.sort()
+        news = ''
+        lbound = 0
+        for s in spans:
+            news += text[lbound:s[0]]
+            news += replace_with
+            lbound = s[1]
+        news += text[spans[-1][1]:]
+        return news
 
     def find(self, text, min_amount=-float("inf"), max_amount=float("inf"),
              numeric_to_money=False):
