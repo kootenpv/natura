@@ -228,6 +228,11 @@ def test_synonym():
     t = "5 bucks"
     generic_test(t, None, [5, 'USD', 2])
 
+
+def test_dotend():
+    generic_test("$500.", None, [500, 'USD', 2])
+
+
 currency_types = ['symbols', 'currencies']
 money_strings = [u"500{ms}", u"500 {ms}", u"asdf500 {ms}"]
 

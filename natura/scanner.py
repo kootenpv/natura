@@ -57,12 +57,14 @@ class Scanner():
     @staticmethod
     def to_number_regex(scanner, x):
         result = None
-        if not re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(\.[0-9]{2})?$", x):
+        if re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*[.]$", x):
+            result = float(x.replace(",", ""))
+        elif not re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(\.[0-9]{2})?$", x):
             result = None
-        elif re.match("^-?[0-9]+$", x):
+        elif re.match("^-?[0-9]+[.]?$", x):
             result = float(x)
         elif re.match("^-?[0-9]{1,3}(,[0-9]{3})*([.][0-9]+)*$", x):
             result = float(x.replace(",", ""))
-        elif re.match(r"^-?[0-9]+\.[0-9]+$", x):
+        elif re.match(r"^-?[0-9]+\.[0-9]+[.]?$", x):
             result = float(x)
         return Amount(result, scanner.match.span()) if result else None
