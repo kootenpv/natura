@@ -1,0 +1,441 @@
+{
+    "symbols": {
+        "\u20ac": [
+            [
+                "EUR",
+                true
+            ]
+        ],
+        "$": [
+            [
+                "LRD",
+                false
+            ],
+            [
+                "SBD",
+                false
+            ],
+            [
+                "NZD",
+                false
+            ],
+            [
+                "MXN",
+                false
+            ],
+            [
+                "KYD",
+                false
+            ],
+            [
+                "BSD",
+                false
+            ],
+            [
+                "NAD",
+                false
+            ],
+            [
+                "CAD",
+                false
+            ],
+            [
+                "ARS",
+                false
+            ],
+            [
+                "GYD",
+                false
+            ],
+            [
+                "BND",
+                false
+            ],
+            [
+                "HKD",
+                false
+            ],
+            [
+                "SGD",
+                false
+            ],
+            [
+                "TVD",
+                false
+            ],
+            [
+                "SVC",
+                false
+            ],
+            [
+                "AUD",
+                false
+            ],
+            [
+                "BBD",
+                false
+            ],
+            [
+                "CLP",
+                false
+            ],
+            [
+                "FJD",
+                false
+            ],
+            [
+                "USD",
+                true
+            ],
+            [
+                "SRD",
+                false
+            ],
+            [
+                "XCD",
+                false
+            ],
+            [
+                "BMD",
+                false
+            ],
+            [
+                "COP",
+                false
+            ]
+        ]
+    },
+    "keywords": {
+        "Bermudian": "BMD",
+        "Argentina": "ARS",
+        "Euro Member": "EUR",
+        "Namibia": "NAD",
+        "European": "EUR",
+        "Tuvalu": "TVD",
+        "Fiji": "FJD",
+        "US": "USD",
+        "New Taiwan": "TWD",
+        "Guyanese": "GYD",
+        "Mexican": "MXN",
+        "Colombian": "COP",
+        "Salvadoran": "SVC",
+        "Canada": "CAD",
+        "Chilean": "CLP",
+        "Taiwan New": "TWD",
+        "Trinidad & Tobago": "TTD",
+        "Barbados": "BBD",
+        "Hong Kong": "HKD",
+        "Bermudan": "BMD",
+        "Liberian": "LRD",
+        "Singapore": "SGD",
+        "Belize": "BZD",
+        "Surinamese": "SRD",
+        "Mexico": "MXN",
+        "Bahamas": "BSD",
+        "United States": "USD",
+        "Solomon Islands": "SBD",
+        "El Salvador": "SVC",
+        "Colombia": "COP",
+        "Trinidad and Tobago": "TTD",
+        "Cayman Islands": "KYD",
+        "Australia": "AUD",
+        "Fijian": "FJD",
+        "Liberia": "LRD",
+        "Namibian": "NAD",
+        "Canadian": "CAD",
+        "Brunei": "BND",
+        "Argentine": "ARS",
+        "Jamaica": "JMD",
+        "Bermuda": "BMD",
+        "Zimbabwe": "ZWD",
+        "Guyana": "GYD",
+        "Barbadian": "BBD",
+        "East Caribbean": "XCD",
+        "Guyanaese": "GYD",
+        "Australian": "AUD",
+        "New Zealand": "NZD",
+        "Bahamian": "BSD",
+        "Jamaican": "JMD",
+        "Brunei Darussalam": "BND",
+        "Suriname": "SRD",
+        "Chile": "CLP"
+    },
+    "units": {
+        "b": 1000000000,
+        "eight": 8,
+        "mn": 1000000,
+        "m": 1000000,
+        "eighteen": 18,
+        "seven": 7,
+        "eighty": 80,
+        "nineteen": 19,
+        "nine": 9,
+        "mil": 1000000,
+        "fourty": 40,
+        "one": 1,
+        "thirteen": 17,
+        "five": 5,
+        "fifty": 50,
+        "cent": 0.01,
+        "sixty": 60,
+        "trillion": 1000000000000,
+        "thousand": 1000,
+        "million": 1000000,
+        "twenty": 20,
+        "ten": 10,
+        "seventy": 70,
+        "bn": 1000000000,
+        "twelve": 16,
+        "eleven": 11,
+        "sixteen": 16,
+        "two": 2,
+        "half": 0.5,
+        "six": 6,
+        "billion": 1000000000,
+        "fifteen": 15,
+        "seventeen": 17,
+        "thirty": 30,
+        "ninety": 90,
+        "four": 4,
+        "hundred": 100,
+        "three": 3,
+        "fourteen": 14,
+        "k": 1000
+    },
+    "abbrevs": [
+        "SGD",
+        "ARS",
+        "CLP",
+        "BND",
+        "HKD",
+        "LRD",
+        "BMD",
+        "ZWD",
+        "COP",
+        "SBD",
+        "BBD",
+        "TVD",
+        "BZD",
+        "GYD",
+        "EUR",
+        "TTD",
+        "MXN",
+        "BSD",
+        "NZD",
+        "NAD",
+        "SVC",
+        "FJD",
+        "TWD",
+        "AUD",
+        "JMD",
+        "SRD",
+        "XCD",
+        "KYD",
+        "CAD",
+        "USD"
+    ],
+    "currencies": {
+        "bucks": [
+            [
+                "LRD",
+                false
+            ],
+            [
+                "JMD",
+                false
+            ],
+            [
+                "SBD",
+                false
+            ],
+            [
+                "NZD",
+                false
+            ],
+            [
+                "BZD",
+                false
+            ],
+            [
+                "KYD",
+                false
+            ],
+            [
+                "BSD",
+                false
+            ],
+            [
+                "ZWD",
+                false
+            ],
+            [
+                "CAD",
+                false
+            ],
+            [
+                "NAD",
+                false
+            ],
+            [
+                "GYD",
+                false
+            ],
+            [
+                "BND",
+                false
+            ],
+            [
+                "HKD",
+                false
+            ],
+            [
+                "SGD",
+                false
+            ],
+            [
+                "TVD",
+                false
+            ],
+            [
+                "AUD",
+                false
+            ],
+            [
+                "BBD",
+                false
+            ],
+            [
+                "FJD",
+                false
+            ],
+            [
+                "USD",
+                true
+            ],
+            [
+                "TTD",
+                false
+            ],
+            [
+                "SRD",
+                false
+            ],
+            [
+                "XCD",
+                false
+            ],
+            [
+                "BMD",
+                false
+            ],
+            [
+                "TWD",
+                false
+            ]
+        ],
+        "euro": [
+            [
+                "EUR",
+                true
+            ]
+        ],
+        "dollar": [
+            [
+                "LRD",
+                false
+            ],
+            [
+                "JMD",
+                false
+            ],
+            [
+                "SBD",
+                false
+            ],
+            [
+                "NZD",
+                false
+            ],
+            [
+                "BZD",
+                false
+            ],
+            [
+                "KYD",
+                false
+            ],
+            [
+                "BSD",
+                false
+            ],
+            [
+                "ZWD",
+                false
+            ],
+            [
+                "CAD",
+                false
+            ],
+            [
+                "NAD",
+                false
+            ],
+            [
+                "GYD",
+                false
+            ],
+            [
+                "BND",
+                false
+            ],
+            [
+                "HKD",
+                false
+            ],
+            [
+                "SGD",
+                false
+            ],
+            [
+                "TVD",
+                false
+            ],
+            [
+                "AUD",
+                false
+            ],
+            [
+                "BBD",
+                false
+            ],
+            [
+                "FJD",
+                false
+            ],
+            [
+                "USD",
+                true
+            ],
+            [
+                "TTD",
+                false
+            ],
+            [
+                "SRD",
+                false
+            ],
+            [
+                "XCD",
+                false
+            ],
+            [
+                "BMD",
+                false
+            ],
+            [
+                "TWD",
+                false
+            ]
+        ]
+    }
+}
