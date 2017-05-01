@@ -31,8 +31,11 @@ def get_default(symbols):
 def generic_test(money_string, _money, *results):
     money = _money or default_money
     mp = money.findall(money_string)
-    assert len(mp) == len(results)
-    assert all([proove(match, result) for match, result in zip(mp, results)])
+    if not results:
+        assert not mp
+    else:
+        assert len(mp) == len(results)
+        assert all([proove(match, result) for match, result in zip(mp, results)])
     return mp
 
 
@@ -227,6 +230,11 @@ def test_decimal_points():
 def test_synonym():
     t = "5 bucks"
     generic_test(t, None, [5, 'USD', 2])
+
+
+def test_false_extra_letter():
+    t = "s Q1"
+    generic_test(t, None)
 
 
 def test_dotend():

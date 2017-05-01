@@ -100,7 +100,8 @@ class Finder(object):
                 currencies.append(currency)
                 strike = 0
             elif isinstance(m, Skipper):
-                strike += 1
+                # issuematic... here be dragons
+                strike += 10
             elif strike < 2 and isinstance(m, (Amount, TextAmount)):
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
                 strike = 0
