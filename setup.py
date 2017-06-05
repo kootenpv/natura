@@ -3,7 +3,7 @@ from setuptools import setup
 
 MAJOR_VERSION = '0'
 MINOR_VERSION = '0'
-MICRO_VERSION = '38'
+MICRO_VERSION = '40'
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 setup(name='natura',
@@ -21,6 +21,9 @@ setup(name='natura',
           'python-dateutil',
           'requests'
       ],
+      entry_points={
+          'console_scripts': ['natura = natura.__main__:main']
+      },
       classifiers=[
           'Intended Audience :: Developers',
           'Intended Audience :: Customer Service',

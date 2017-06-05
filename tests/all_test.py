@@ -63,6 +63,14 @@ def test_beginning6_not():
     generic_test("dollars 500", None)
 
 
+def test_beginning7():
+    generic_test("$ 500", None, [500, 'USD', 2])
+
+
+# def test_not_without():
+#     generic_test("$ M", None)
+
+
 def test_multiple():
     t = "500dollars 500dollars 500dollars"
     generic_test(t, None, [500, 'USD', 2], [500, 'USD', 2], [500, 'USD', 2])
