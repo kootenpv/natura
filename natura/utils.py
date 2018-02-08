@@ -1,3 +1,4 @@
+import re
 import json
 import pkgutil
 
@@ -54,3 +55,27 @@ def find_non_overlapping_results(matches):
 def load_locale(language):
     locale = pkgutil.get_data("data.money", "{}.json".format(language.lower()))
     return json.loads(locale.decode('utf-8'))
+
+
+seps = [",", ".", "'", " "]
+
+
+def to_number_regex(x):
+    x = x.strip()
+    result = None
+    for comma_sep in seps:
+        for thousand_sep in seps:
+            if comma_sep == thousand_sep:
+                continue
+            regex = "^[+-]?"
+            regex += "[0-9]{1,3}"
+            regex += "(?:[" + thousand_sep + "]?[0-9]{3})*"
+            regex += "([" + comma_sep + "][0-9]{2})?"
+            regex += "$"
+            if re.match(regex, x):
+                try:
+                    result = float(x.replace(thousand_sep, "").replace(comma_sep, "."))
+                except ValueError:
+                    continue
+                return result
+    return result

@@ -38,7 +38,8 @@ class Finder(object):
                     return x
                 results.append(x)
 
-        results.sort(key=lambda x: x.spans)
+        # better match in reverse, e.g. "L6001 3WJ 807934 $123.12"
+        results.sort(key=lambda x: x.spans, reverse=True)
         results = find_non_overlapping_results(results)
 
         if not results and numeric_to_money:

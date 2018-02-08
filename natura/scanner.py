@@ -1,5 +1,6 @@
 import re
 from natura.classes import *
+from natura.utils import to_number_regex
 
 
 def pipe(ls, pre=r'(?<![a-zA-Z])', post=r'(?![a-zA-Z])'):
@@ -18,7 +19,7 @@ class Scanner():
             (pipe(self.locale['currencies'], pre=r'', post=r's?\b'), self.currency_regex),
             (pipe(self.locale['abbrevs']), lambda y, x: Abbrev(x, y.match.span())),
             (self.symbols_to_regex(), self.symbol_regex),
-            (r'-?[0-9.,]+', self.to_number_regex),
+            (r'-?[0-9., ]+', self.to_number),
             (r' |-', self.echo_regex),
             (pipe(self.locale['units']), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
@@ -55,16 +56,6 @@ class Scanner():
         return Keyword(x, self.locale['keywords'][x], scanner.match.span())
 
     @staticmethod
-    def to_number_regex(scanner, x):
-        result = None
-        if re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*[.]$", x):
-            result = float(x.replace(",", ""))
-        elif not re.match("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(\.[0-9]{2})?$", x):
-            result = None
-        elif re.match("^-?[0-9]+[.]?$", x):
-            result = float(x)
-        elif re.match("^-?[0-9]{1,3}(,[0-9]{3})*([.][0-9]+)*$", x):
-            result = float(x.replace(",", ""))
-        elif re.match(r"^-?[0-9]+\.[0-9]+[.]?$", x):
-            result = float(x)
+    def to_number(scanner, x):
+        result = to_number_regex(x)
         return Amount(result, scanner.match.span()) if result else None
