@@ -25,13 +25,13 @@ class Finder(object):
             self.scanner = scanner
 
     def findall(self, text, min_amount=-float("inf"), max_amount=float("inf"),
-                numeric_to_money=False, single=False):
+                numeric_to_money=False, single=False, return_keywords=True):
         self.set_scanner()
         sm, _ = self.scanner.scan(text)
         results = []
         for entity, check_class in [(sm, Abbrev), (reversed(sm), Abbrev), (sm, Symbol),
                                     (reversed(sm), Symbol), (reversed(sm), Currency)]:
-            for x in self.get_money(entity, check_class, text):
+            for x in self.get_money(entity, check_class, text, return_keywords):
                 if not min_amount < x.value < max_amount:
                     continue
                 if single:
@@ -81,7 +81,7 @@ class Finder(object):
                 for sm in scan_matches
                 if isinstance(sm, Amount)]
 
-    def get_money(self, scan_matches, currency_symbol_abbrev, text):
+    def get_money(self, scan_matches, currency_symbol_abbrev, text, return_keywords):
         scan_matches = list(scan_matches)
         strike = 10000
         amounts = []
@@ -96,7 +96,7 @@ class Finder(object):
                     currency = m.x
                 else:
                     keyword, currency = guess_currency(m, clues, self.locale)
-                    if keyword is not None:
+                    if keyword is not None and return_keywords:
                         start_ends[-1].append(keyword.span)
                 currencies.append(currency)
                 strike = 0
@@ -104,6 +104,7 @@ class Finder(object):
                 # issuematic... here be dragons
                 strike += 10
             elif strike < 2 and isinstance(m, (Amount, TextAmount)):
+                # does not properly work e.g. "three hundred seventy five dollar"
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
                 strike = 0
                 start_ends[-1].append(m.span)

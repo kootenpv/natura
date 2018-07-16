@@ -61,6 +61,7 @@ seps = [",", ".", "'", " "]
 
 
 def to_number_regex(x):
+    # This does not work if amount has leading . or ,
     x = x.strip()
     result = None
     for comma_sep in seps:

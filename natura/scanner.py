@@ -19,12 +19,12 @@ class Scanner():
             (pipe(self.locale['currencies'], pre=r'', post=r's?\b'), self.currency_regex),
             (pipe(self.locale['abbrevs']), lambda y, x: Abbrev(x, y.match.span())),
             (self.symbols_to_regex(), self.symbol_regex),
-            (r'-?[0-9., ]+', self.to_number),
+            (r'-?[0-9., ]*[0-9]+', self.to_number),
             (r' |-', self.echo_regex),
             (pipe(self.locale['units']), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
             (r'\n', lambda y, x: Skipper(x, y.match.span()))
-        ], re.MULTILINE | re.IGNORECASE).scan
+        ], re.MULTILINE | re.IGNORECASE | re.UNICODE).scan
 
     def symbols_to_regex(self):
         esc = [x.replace("$", r"\$").replace(".", r"\.") for x in self.locale['symbols']]
@@ -48,6 +48,7 @@ class Scanner():
         return None
 
     def units_regex(self, scanner, x):
+        # x.lower() could cause error when capital is important e.g. M(mega) vs m(milli)
         return TextAmount(float(self.locale['units'][x.lower()]), scanner.match.span())
 
     def handle_keyword(self, scanner, x):
