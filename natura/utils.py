@@ -71,7 +71,7 @@ def to_number_regex(x):
             regex = "^[+-]?"
             regex += "[0-9]{1,3}"
             regex += "(?:[" + thousand_sep + "]?[0-9]{3})*"
-            regex += "([" + comma_sep + "][0-9]{2})?"
+            regex += "([" + comma_sep + "][0-9]{1,2})?"
             regex += "$"
             if re.match(regex, x):
                 try:
