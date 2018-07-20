@@ -47,6 +47,14 @@ Tested for 2.7 and 3.5:
 
 - **base_currency**: can be changed using `Finder(base_currency="USD")`
 - **conversion_backend**: can use different websites as backends: `Finder(converter=MyClass)`
+    
+    **Note:**
+    Default, no converter is used.
+    To use converter https://fixer.io/, create an account and request a key.
+    ```python
+    from natura.conversion_backends import FixerIOExchangeRate
+    Finder(converter=FixerIOExchangeRate("SUPPLY_OWN_KEY"))
+    ```
 - **locale**: create your own locales with different behavior
 - **thread-safe caching**: can implement different caching schedule: `Finder(converter=MyClass)`
     - Currently implements hourly updates and stores locally in sqlite3

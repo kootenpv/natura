@@ -1,182 +1,14 @@
-{
-  "abbrevs": [
-        "AED",
-        "AFN",
-        "ALL",
-        "AMD",
-        "ANG",
-        "AOA",
-        "ARS",
-        "AUD",
-        "AWG",
-        "AZN",
-        "BAM",
-        "BBD",
-        "BDT",
-        "BEF",
-        "BGN",
-        "BHD",
-        "BIF",
-        "BMD",
-        "BND",
-        "BOB",
-        "BRL",
-        "BSD",
-        "BTC",
-        "BTN",
-        "BWP",
-        "BYR",
-        "BZD",
-        "CAD",
-        "CDF",
-        "CHF",
-        "CLP",
-        "CNY",
-        "COP",
-        "CRC",
-        "CUC",
-        "CUP",
-        "CVE",
-        "CZK",
-        "DEM",
-        "DJF",
-        "DKK",
-        "DOP",
-        "DZD",
-        "EEK",
-        "EGP",
-        "ERN",
-        "ETB",
-        "EUR",
-        "FJD",
-        "FKP",
-        "GBP",
-        "GEL",
-        "GGP",
-        "GHS",
-        "GIP",
-        "GMD",
-        "GNF",
-        "GRD",
-        "GTQ",
-        "GYD",
-        "HKD",
-        "HNL",
-        "HRK",
-        "HTG",
-        "HUF",
-        "IDR",
-        "ILS",
-        "IMP",
-        "INR",
-        "IQD",
-        "IRR",
-        "ISK",
-        "ITL",
-        "JEP",
-        "JMD",
-        "JOD",
-        "JPY",
-        "KES",
-        "KGS",
-        "KHR",
-        "KMF",
-        "KPW",
-        "KRW",
-        "KWD",
-        "KYD",
-        "KZT",
-        "LAK",
-        "LBP",
-        "LKR",
-        "LRD",
-        "LSL",
-        "LTL",
-        "LVL",
-        "LYD",
-        "MAD",
-        "MDL",
-        "MGA",
-        "MKD",
-        "MMK",
-        "MNT",
-        "MOP",
-        "MRU",
-        "MUR",
-        "MVR",
-        "MWK",
-        "MXN",
-        "MYR",
-        "MZM",
-        "MZN",
-        "NAD",
-        "NGN",
-        "NIO",
-        "NOK",
-        "NPR",
-        "NZD",
-        "OMR",
-        "PAB",
-        "PEN",
-        "PGK",
-        "PHP",
-        "PKR",
-        "PLN",
-        "PYG",
-        "QAR",
-        "RON",
-        "RSD",
-        "RUB",
-        "RWF",
-        "SAR",
-        "SBD",
-        "SCR",
-        "SDG",
-        "SEK",
-        "SGD",
-        "SHP",
-        "SKK",
-        "SLL",
-        "SOS",
-        "SRD",
-        "STD",
-        "SVC",
-        "SYP",
-        "SZL",
-        "THB",
-        "TJS",
-        "TMT",
-        "TND",
-        "TRY",
-        "TTD",
-        "TVD",
-        "TWD",
-        "TZS",
-        "UAH",
-        "UGX",
-        "USD",
-        "UYU",
-        "UZS",
-        "VEB",
-        "VEF",
-        "VND",
-        "VUV",
-        "WST",
-        "XAF",
-        "XCD",
-        "XDR",
-        "XOF",
-        "XPF",
-        "YER",
-        "ZAR",
-        "ZMK",
-        "ZWD",
-        "ZWR"
-    ],
+{  
     "currencies": {
         "afghani": [
             [
                 "AFN",
+                true
+            ]
+        ],
+        "ariary": [
+            [
+                "MGA",
                 true
             ]
         ],
@@ -192,9 +24,27 @@
                 true
             ]
         ],
+        "birr": [
+            [
+                "ETB",
+                true
+            ]
+        ],
         "bitcoin": [
             [
                 "BTC",
+                true
+            ]
+        ],
+        "bolívar fuerte": [
+            [
+                "VEF",
+                true
+            ]
+        ],
+        "bolívar": [
+            [
+                "VEF",
                 true
             ]
         ],
@@ -204,108 +54,10 @@
                 true
             ]
         ],
-        "bolã­viano": [
+        "boliviano": [
             [
                 "BOB",
                 true
-            ]
-        ],
-        "bucks": [
-            [
-                "AUD",
-                false
-            ],
-            [
-                "BBD",
-                false
-            ],
-            [
-                "BMD",
-                false
-            ],
-            [
-                "BND",
-                false
-            ],
-            [
-                "BSD",
-                false
-            ],
-            [
-                "BZD",
-                false
-            ],
-            [
-                "CAD",
-                false
-            ],
-            [
-                "FJD",
-                false
-            ],
-            [
-                "GYD",
-                false
-            ],
-            [
-                "HKD",
-                false
-            ],
-            [
-                "JMD",
-                false
-            ],
-            [
-                "KYD",
-                false
-            ],
-            [
-                "LRD",
-                false
-            ],
-            [
-                "NAD",
-                false
-            ],
-            [
-                "NZD",
-                false
-            ],
-            [
-                "SBD",
-                false
-            ],
-            [
-                "SGD",
-                false
-            ],
-            [
-                "SRD",
-                false
-            ],
-            [
-                "TTD",
-                false
-            ],
-            [
-                "TVD",
-                false
-            ],
-            [
-                "TWD",
-                false
-            ],
-            [
-                "USD",
-                true
-            ],
-            [
-                "XCD",
-                false
-            ],
-            [
-                "ZWD",
-                false
             ]
         ],
         "cedi": [
@@ -324,9 +76,37 @@
                 false
             ]
         ],
+        "colón": [
+            [
+                "CRC",
+                true
+            ],
+            [
+                "SVC",
+                false
+            ]
+        ],
         "cordoba": [
             [
                 "NIO",
+                true
+            ]
+        ],
+        "córdoba": [
+            [
+                "NIO",
+                true
+            ]
+        ],
+        "córdoba oro": [
+            [
+                "NIO",
+                true
+            ]
+        ],
+        "dalasi": [
+            [
+                "GMD",
                 true
             ]
         ],
@@ -338,7 +118,57 @@
         ],
         "dinar": [
             [
+                "TND",
+                false
+            ],
+            [
+                "LYD",
+                false
+            ],
+            [
+                "KWD",
+                false
+            ],
+            [
+                "JOD",
+                false
+            ],
+            [
+                "IQD",
+                false
+            ],
+            [
+                "BHD",
+                false
+            ],
+            [
+                "DZD",
+                false
+            ],
+            [
                 "RSD",
+                true
+            ]
+        ],
+        "dirham": [
+            [
+                "AED",
+                false
+            ],
+            [
+                "MAD",
+                true
+            ]
+        ],
+        "neuer dobra": [
+            [
+                "STN",
+                true
+            ]
+        ],
+        "dobra": [
+            [
+                "STN",
                 true
             ]
         ],
@@ -420,10 +250,6 @@
                 false
             ],
             [
-                "TVD",
-                false
-            ],
-            [
                 "TWD",
                 false
             ],
@@ -434,15 +260,29 @@
             [
                 "XCD",
                 false
-            ],
+            ]
+        ],
+        "đồng": [
             [
-                "ZWD",
-                false
+                "VND",
+                true
             ]
         ],
         "dong": [
             [
                 "VND",
+                true
+            ]
+        ],
+        "dram": [
+            [
+                "AMD",
+                true
+            ]
+        ],
+        "escudo": [
+            [
+                "CVE",
                 true
             ]
         ],
@@ -452,15 +292,77 @@
                 true
             ]
         ],
+        "florin": [
+            [
+                "AWG",
+                true
+            ]
+        ],
         "forint": [
             [
                 "HUF",
                 true
             ]
         ],
-        "franc": [
+        "franken": [
             [
                 "CHF",
+                true
+            ]
+        ],
+        "franc": [
+            [
+                "RWF",
+                false
+            ],
+            [
+                "GNF",
+                false
+            ],
+            [
+                "XPF",
+                false
+            ],
+            [
+                "DJF",
+                false
+            ],
+            [
+                "CDF",
+                false
+            ],
+            [
+                "KMF",
+                false
+            ],
+            [
+                "BIF",
+                false
+            ],
+            [
+                "XAF",
+                false
+            ],
+            [
+                "CHF",
+                true
+            ]
+        ],
+        "gourde": [
+            [
+                "HTG",
+                true
+            ]
+        ],
+        "hrywnja": [
+            [
+                "UAH",
+                true
+            ]
+        ],
+        "guaraní": [
+            [
+                "PYG",
                 true
             ]
         ],
@@ -470,19 +372,15 @@
                 true
             ]
         ],
-        "guilder": [
+        "gulden": [
             [
                 "ANG",
                 true
-            ],
-            [
-                "AWG",
-                false
             ]
         ],
-        "hryvnia": [
+        "kina": [
             [
-                "UAH",
+                "PGK",
                 true
             ]
         ],
@@ -492,15 +390,21 @@
                 true
             ]
         ],
-        "koruna": [
+        "krone": [
             [
                 "CZK",
-                true
-            ]
-        ],
-        "krona": [
+                false
+            ],
+            [
+                "DKK",
+                false
+            ],
             [
                 "ISK",
+                false
+            ],
+            [
+                "NOK",
                 false
             ],
             [
@@ -508,19 +412,37 @@
                 true
             ]
         ],
-        "krone": [
-            [
-                "DKK",
-                true
-            ],
-            [
-                "NOK",
-                false
-            ]
-        ],
         "kuna": [
             [
                 "HRK",
+                true
+            ]
+        ],
+        "kwacha": [
+            [
+                "MWK",
+                false
+            ],
+            [
+                "ZMW",
+                true
+            ]
+        ],
+        "kwanza": [
+            [
+                "AOA",
+                true
+            ]
+        ],
+        "kyat": [
+            [
+                "MMK",
+                true
+            ]
+        ],
+        "lari": [
+            [
+                "GEL",
                 true
             ]
         ],
@@ -536,25 +458,53 @@
                 true
             ]
         ],
+        "leone": [
+            [
+                "SLL",
+                true
+            ]
+        ],
         "leu": [
             [
                 "RON",
                 true
             ]
         ],
-        "lev": [
+        "lew": [
             [
                 "BGN",
                 true
             ]
         ],
+        "lilangeni": [
+            [
+                "SZL",
+                true
+            ]
+        ],
+        "lira": [
+            [
+                "TRY",
+                true
+            ]
+        ],
+        "loti": [
+            [
+                "LSL",
+                true
+            ]
+        ],
         "manat": [
+            [
+                "TMT",
+                false
+            ],
             [
                 "AZN",
                 true
             ]
         ],
-        "marka": [
+        "mark": [
             [
                 "BAM",
                 true
@@ -569,6 +519,36 @@
         "naira": [
             [
                 "NGN",
+                true
+            ]
+        ],
+        "nafka": [
+            [
+                "ERN",
+                true
+            ]
+        ],
+        "ngultrum": [
+            [
+                "BTN",
+                true
+            ]
+        ],
+        "ouguiya": [
+            [
+                "MRU",
+                true
+            ]
+        ],
+        "pataca": [
+            [
+                "MOP",
+                true
+            ]
+        ],
+        "pa'anga": [
+            [
+                "TOP",
                 true
             ]
         ],
@@ -606,7 +586,7 @@
                 false
             ]
         ],
-        "pound": [
+        "pfund": [
             [
                 "EGP",
                 false
@@ -620,19 +600,7 @@
                 true
             ],
             [
-                "GGP",
-                false
-            ],
-            [
                 "GIP",
-                false
-            ],
-            [
-                "IMP",
-                false
-            ],
-            [
-                "JEP",
                 false
             ],
             [
@@ -640,7 +608,15 @@
                 false
             ],
             [
+                "SDG",
+                false
+            ],
+            [
                 "SHP",
+                false
+            ],
+            [
+                "SSP",
                 false
             ],
             [
@@ -714,9 +690,9 @@
                 true
             ]
         ],
-        "ruble": [
+        "rubel": [
             [
-                "BYR",
+                "BYN",
                 false
             ],
             [
@@ -724,7 +700,13 @@
                 true
             ]
         ],
-        "rupee": [
+        "rupiah": [
+            [
+                "IDR",
+                true
+            ]
+        ],
+        "rupie": [
             [
                 "LKR",
                 false
@@ -739,6 +721,10 @@
             ],
             [
                 "PKR",
+                false
+            ],
+            [
+                "INR",
                 true
             ],
             [
@@ -746,21 +732,39 @@
                 false
             ]
         ],
-        "rupiah": [
+        "rufiyaa": [
             [
-                "IDR",
+                "MVR",
                 true
             ]
         ],
-        "shekel": [
+        "schekel": [
             [
                 "ILS",
                 true
             ]
         ],
-        "shilling": [
+        "schilling": [
+            [
+                "KES",
+                false
+            ],
+            [
+                "TZS",
+                false
+            ],
+            [
+                "UGX",
+                false
+            ],
             [
                 "SOS",
+                true
+            ]
+        ],
+        "nuevo Sol": [
+            [
+                "PEN",
                 true
             ]
         ],
@@ -774,10 +778,30 @@
             [
                 "KGS",
                 true
-            ],
+            ]
+        ],
+        "somoni": [
+            [
+                "TJS",
+                true
+            ]
+        ],
+        "so'm": [
             [
                 "UZS",
-                false
+                true
+            ]
+        ],
+        "taka": [
+            [
+                "BDT",
+                true
+            ]
+        ],
+        "tala": [
+            [
+                "WST",
+                true
             ]
         ],
         "tenge": [
@@ -786,9 +810,15 @@
                 true
             ]
         ],
-        "tughrik": [
+        "tögrög": [
             [
                 "MNT",
+                true
+            ]
+        ],
+        "vatu": [
+            [
+                "VUV",
                 true
             ]
         ],
@@ -808,6 +838,12 @@
                 true
             ]
         ],
+        "yuan": [
+            [
+                "CNY",
+                true
+            ]
+        ],
         "zloty": [
             [
                 "PLN",
@@ -815,283 +851,57 @@
             ]
         ]
     },
-    "keywords": {
-        "Afghan": "AFN",
-        "Afghanistan": "AFN",
-        "Albania": "ALL",
-        "Albanian": "ALL",
-        "Algerian": "DZD",
-        "Angolan": "AOA",
-        "Argentina": "ARS",
-        "Argentine": "ARS",
-        "Armenian": "AMD",
-        "Aruba": "AWG",
-        "Aruban": "AWG",
-        "Australia": "AUD",
-        "Australian": "AUD",
-        "Azerbaijan New": "AZN",
-        "Azerbaijani": "AZN",
-        "Bahamas": "BSD",
-        "Bahamian": "BSD",
-        "Bahraini": "BHD",
-        "Bangladeshi": "BDT",
-        "Barbadian": "BBD",
-        "Barbados": "BBD",
-        "Belarus": "BYR",
-        "Belarusian": "BYR",
-        "Belgian": "BEF",
-        "Belize": "BZD",
-        "Bermuda": "BMD",
-        "Bermudan": "BMD",
-        "Bermudian": "BMD",
-        "Bhutanese": "BTN",
-        "Bolivia": "BOB",
-        "Bolivian": "BOB",
-        "Bosnia and Herzegovina Convertible": "BAM",
-        "Bosnia and Herzegovina konvertibilna": "BAM",
-        "Bosnia-Herzegovina Convertible": "BAM",
-        "Botswana": "BWP",
-        "Botswanan": "BWP",
-        "Brazil": "BRL",
-        "Brazilian": "BRL",
-        "British": "GBP",
-        "Brunei": "BND",
-        "Brunei Darussalam": "BND",
-        "Bulgaria": "BGN",
-        "Bulgarian": "BGN",
-        "Burundi": "BIF",
-        "Burundian": "BIF",
-        "Cambodia": "KHR",
-        "Cambodian": "KHR",
-        "Canada": "CAD",
-        "Canadian": "CAD",
-        "Cape Verdean": "CVE",
-        "Cayman Islands": "KYD",
-        "Central African CFA": "XAF",
-        "CFP": "XPF",
-        "Chile": "CLP",
-        "Chilean": "CLP",
-        "China Yuan": "CNY",
-        "Chinese": "CNY",
-        "Chinese/Yuan": "CNY",
-        "Colombia": "COP",
-        "Colombian": "COP",
-        "Comorian": "KMF",
-        "Congolese": "CDF",
-        "Costa Rica": "CRC",
-        "Costa Rican": "CRC",
-        "Croatia": "HRK",
-        "Croatian": "HRK",
-        "Cuba": "CUP",
-        "Cuban": "CUC",
-        "Cuban Convertible": "CUC",
-        "Czech": "CZK",
-        "Czech Republic": "CZK",
-        "Danish": "DKK",
-        "Denmark": "DKK",
-        "Djiboutian": "DJF",
-        "Dominican": "DOP",
-        "Dominican Republic": "DOP",
-        "East Caribbean": "XCD",
-        "Egypt": "EGP",
-        "Egyptian": "EGP",
-        "El Salvador": "SVC",
-        "Eritrean": "ERN",
-        "Estonian": "EEK",
-        "Ethiopian": "ETB",
-        "Euro Member": "EUR",
-        "European": "EUR",
-        "Falkland Islands": "FKP",
-        "Falkland Islands ": "FKP",
-        "Fiji": "FJD",
-        "Fijian": "FJD",
-        "Gambian": "GMD",
-        "Georgian": "GEL",
-        "German": "DEM",
-        "Ghana": "GHS",
-        "Ghanaian": "GHS",
-        "Gibraltar": "GIP",
-        "Greek": "GRD",
-        "Guatemala": "GTQ",
-        "Guatemalan": "GTQ",
-        "Guernsey": "GGP",
-        "Guinean": "GNF",
-        "Guyana": "GYD",
-        "Guyanaese": "GYD",
-        "Guyanese": "GYD",
-        "Haitian": "HTG",
-        "Honduran": "HNL",
-        "Honduras": "HNL",
-        "Hong Kong": "HKD",
-        "Hungarian": "HUF",
-        "Hungary": "HUF",
-        "Iceland": "ISK",
-        "Icelandic": "ISK",
-        "Indian": "INR",
-        "Indonesia": "IDR",
-        "Indonesian": "IDR",
-        "Iran": "IRR",
-        "Iranian": "IRR",
-        "Iraqi": "IQD",
-        "Isle of Man": "IMP",
-        "Israel": "ILS",
-        "Israeli New": "ILS",
-        "Israeli new": "ILS",
-        "Italian": "ITL",
-        "Jamaica": "JMD",
-        "Jamaican": "JMD",
-        "Japan": "JPY",
-        "Japanese": "JPY",
-        "Jersey": "JEP",
-        "Jordanian": "JOD",
-        "Kazakhstan": "KZT",
-        "Kazakhstani": "KZT",
-        "Kenyan": "KES",
-        "Korea ": "KRW",
-        "Kuwaiti": "KWD",
-        "Kyrgystani": "KGS",
-        "Kyrgyzstan": "KGS",
-        "Kyrgyzstani": "KGS",
-        "Lao": "LAK",
-        "Laos": "LAK",
-        "Laotian": "LAK",
-        "Latvian": "LVL",
-        "Lebanese": "LBP",
-        "Lebanon": "LBP",
-        "Lesotho": "LSL",
-        "Liberia": "LRD",
-        "Liberian": "LRD",
-        "Libyan": "LYD",
-        "Lithuanian": "LTL",
-        "Macanese": "MOP",
-        "Macedonia": "MKD",
-        "Macedonian": "MKD",
-        "Malagasy": "MGA",
-        "Malawian": "MWK",
-        "Malaysia": "MYR",
-        "Malaysian": "MYR",
-        "Maldivian": "MVR",
-        "Mauritanian": "MRU",
-        "Mauritian": "MUR",
-        "Mauritius": "MUR",
-        "Mexican": "MXN",
-        "Mexico": "MXN",
-        "Moldovan": "MDL",
-        "Mongolia": "MNT",
-        "Mongolian": "MNT",
-        "Moroccan": "MAD",
-        "Mozambican": "MZM",
-        "Mozambique": "MZN",
-        "Myanma": "MMK",
-        "Myanmar": "MMK",
-        "Namibia": "NAD",
-        "Namibian": "NAD",
-        "Nepal": "NPR",
-        "Nepalese": "NPR",
-        "Netherlands Antillean": "ANG",
-        "Netherlands Antilles": "ANG",
-        "New Taiwan": "TWD",
-        "New Zealand": "NZD",
-        "Nicaragua": "NIO",
-        "Nicaraguan": "NIO",
-        "Nigeria": "NGN",
-        "Nigerian": "NGN",
-        "North Korean": "KPW",
-        "Norway": "NOK",
-        "Norwegian": "NOK",
-        "Oman": "OMR",
-        "Omani": "OMR",
-        "Pakistan": "PKR",
-        "Pakistani": "PKR",
-        "Panama": "PAB",
-        "Panamanian": "PAB",
-        "Papua New Guinean": "PGK",
-        "Paraguay": "PYG",
-        "Paraguayan": "PYG",
-        "Peru": "PEN",
-        "Peruvian nuevo": "PEN",
-        "Peruvian Nuevo": "PEN",
-        "Philippine": "PHP",
-        "Philippines": "PHP",
-        "Poland": "PLN",
-        "Polish": "PLN",
-        "Qatar": "QAR",
-        "Qatari": "QAR",
-        "Romania New": "RON",
-        "Romanian": "RON",
-        "Russia": "RUB",
-        "Russian": "RUB",
-        "Rwandan": "RWF",
-        "Saint Helena": "SHP",
-        "Salvadoran": "SVC",
-        "Samoan": "WST",
-        "Saudi": "SAR",
-        "Saudi Arabia": "SAR",
-        "Serbia": "RSD",
-        "Serbian": "RSD",
-        "Seychelles": "SCR",
-        "Seychellois": "SCR",
-        "Sierra Leonean": "SLL",
-        "Singapore": "SGD",
-        "Slovak": "SKK",
-        "Solomon Islands": "SBD",
-        "Somali": "SOS",
-        "Somalia": "SOS",
-        "South Africa": "ZAR",
-        "South African": "ZAR",
-        "South Korean": "KRW",
-        "Special Drawing": "XDR",
-        "Sri Lanka": "LKR",
-        "Sri Lankan": "LKR",
-        "St. Helena": "SHP",
-        "Sudanese": "SDG",
-        "Suriname": "SRD",
-        "Surinamese": "SRD",
-        "Swazi": "SZL",
-        "Sweden": "SEK",
-        "Swedish": "SEK",
-        "Swiss": "CHF",
-        "Switzerland": "CHF",
-        "Syria": "SYP",
-        "Syrian": "SYP",
-        "São Tomé & Príncipe": "STD",
-        "Taiwan New": "TWD",
-        "Tajikistani": "TJS",
-        "Tanzanian": "TZS",
-        "Thai": "THB",
-        "Thailand": "THB",
-        "Trinidad & Tobago": "TTD",
-        "Trinidad and Tobago": "TTD",
-        "Tunisian": "TND",
-        "Turkish": "TRY",
-        "Turkish new": "TRY",
-        "Turkmen": "TMT",
-        "Turkmenistani": "TMT",
-        "Tuvalu": "TVD",
-        "UAE": "AED",
-        "Ugandan": "UGX",
-        "Ukraine": "UAH",
-        "Ukrainian": "UAH",
-        "United Arab Emirates": "AED",
-        "United Kingdom": "GBP",
-        "United States": "USD",
-        "Uruguay": "UYU",
-        "Uruguayan": "UYU",
-        "US": "USD",
-        "Uzbekistan": "UZS",
-        "Uzbekistani": "UZS",
-        "Vanuatu": "VUV",
-        "Venezuela": "VEF",
-        "Venezuelan": "VEB",
-        "Viet Nam": "VND",
-        "Vietnamese": "VND",
-        "West African CFA": "XOF",
-        "Yemen": "YER",
-        "Yemeni": "YER",
-        "Zambian": "ZMK",
-        "Zimbabwe": "ZWD",
-        "Zimbabwean": "ZWR"
-    },
+   "units":{  
+      "ein":1,
+      "eins":1,
+      "zwei":2,
+      "drei":3,
+      "vier":4,
+      "fünf":5,
+      "sechs":6,
+      "sieben":7,
+      "acht":8,
+      "neun":9,
+      "zehn":10,
+      "elf":11,
+      "zwölf":12,
+      "dreizehn":13,
+      "vierzehn":14,
+      "fünfzehn":15,
+      "sechzehn":16,
+      "siebzehn":17,
+      "achtzehn":18,
+      "neunzehn":19,
+      "zwanzig":20,
+      "dreißig":30,
+      "vierzig":40,
+      "fünfzig":50,
+      "sechzig":60,
+      "siebzig":70,
+      "achtzig":80,
+      "neunzig":90,
+      "hundert":100,
+      "tausend":1000,
+      "million":1000000,
+      "millionen":1000000,
+      "milliarde":1000000000,
+      "milliarden":1000000000,
+      "billion":1000000000000,
+      "billionen":1000000000000,
+      "billiarde":1000000000000000,
+      "billiarden":1000000000000000,
+      "trillion":1000000000000000000,
+      "trillionen":1000000000000000000,
+      "mio.":1000000,
+      "mill":1000000,
+      "mrd.":1000000000,
+      "mia.":1000000000,
+      "md.":1000000000,
+      "bio.":1000000000000,
+      "bill.":1000000000000,
+      "brd.":1000000000000000,
+      "bld.":1000000000000000
+   },
     "symbols": {
         "$": [
             [
@@ -1176,10 +986,6 @@
             ],
             [
                 "SVC",
-                false
-            ],
-            [
-                "TVD",
                 false
             ],
             [
@@ -1289,13 +1095,13 @@
         ],
         "BR": [
             [
-                "BYR",
+                "BYN",
                 true
             ]
         ],
         "Br": [
             [
-                "BYR",
+                "BYN",
                 true
             ]
         ],
@@ -1443,13 +1249,13 @@
                 true
             ]
         ],
-        "Ft": [
+        "FT": [
             [
                 "HUF",
                 true
             ]
         ],
-        "FT": [
+        "Ft": [
             [
                 "HUF",
                 true
@@ -1467,13 +1273,13 @@
                 true
             ]
         ],
-        "GS": [
+        "Gs": [
             [
                 "PYG",
                 true
             ]
         ],
-        "Gs": [
+        "GS": [
             [
                 "PYG",
                 true
@@ -1533,6 +1339,18 @@
                 true
             ]
         ],
+        "KR": [
+            [
+                "EEK",
+                true
+            ]
+        ],
+        "Kr": [
+            [
+                "DKK",
+                true
+            ]
+        ],
         "kr": [
             [
                 "DKK",
@@ -1551,25 +1369,13 @@
                 true
             ]
         ],
-        "KR": [
-            [
-                "EEK",
-                true
-            ]
-        ],
-        "Kr": [
-            [
-                "DKK",
-                true
-            ]
-        ],
-        "KSH": [
+        "KSh": [
             [
                 "KES",
                 true
             ]
         ],
-        "KSh": [
+        "KSH": [
             [
                 "KES",
                 true
@@ -1623,13 +1429,13 @@
                 true
             ]
         ],
-        "Le": [
+        "LE": [
             [
                 "SLL",
                 true
             ]
         ],
-        "LE": [
+        "Le": [
             [
                 "SLL",
                 true
@@ -1662,12 +1468,6 @@
         "LS": [
             [
                 "SYP",
-                true
-            ]
-        ],
-        "Ls": [
-            [
-                "LVL",
                 true
             ]
         ],
@@ -1713,15 +1513,15 @@
                 true
             ]
         ],
-        "MTn": [
+        "MTN": [
             [
-                "MZM",
+                "MZN",
                 true
             ]
         ],
-        "MTN": [
+        "MTn": [
             [
-                "MZM",
+                "MZN",
                 true
             ]
         ],
@@ -1731,13 +1531,13 @@
                 true
             ]
         ],
-        "NAƑ": [
+        "NAƒ": [
             [
                 "ANG",
                 true
             ]
         ],
-        "NAƒ": [
+        "NAƑ": [
             [
                 "ANG",
                 true
@@ -1755,13 +1555,13 @@
                 true
             ]
         ],
-        "NRS": [
+        "NRs": [
             [
                 "NPR",
                 true
             ]
         ],
-        "NRs": [
+        "NRS": [
             [
                 "NPR",
                 true
@@ -1797,18 +1597,6 @@
                 true
             ]
         ],
-        "p.": [
-            [
-                "BYR",
-                true
-            ]
-        ],
-        "P.": [
-            [
-                "BYR",
-                true
-            ]
-        ],
         "QR": [
             [
                 "QAR",
@@ -1827,13 +1615,13 @@
                 true
             ]
         ],
-        "Rf": [
+        "RF": [
             [
                 "MVR",
                 true
             ]
         ],
-        "RF": [
+        "Rf": [
             [
                 "MVR",
                 true
@@ -1845,13 +1633,13 @@
                 true
             ]
         ],
-        "Rp": [
+        "RP": [
             [
                 "IDR",
                 true
             ]
         ],
-        "RP": [
+        "Rp": [
             [
                 "IDR",
                 true
@@ -1893,13 +1681,13 @@
                 true
             ]
         ],
-        "Sh.": [
+        "SH.": [
             [
                 "SOS",
                 true
             ]
         ],
-        "SH.": [
+        "Sh.": [
             [
                 "SOS",
                 true
@@ -1995,15 +1783,9 @@
                 true
             ]
         ],
-        "Z$": [
-            [
-                "ZWD",
-                true
-            ]
-        ],
         "ZK": [
             [
-                "ZMK",
+                "ZMW",
                 true
             ]
         ],
@@ -2039,19 +1821,7 @@
                 true
             ],
             [
-                "GGP",
-                false
-            ],
-            [
                 "GIP",
-                false
-            ],
-            [
-                "IMP",
-                false
-            ],
-            [
-                "JEP",
                 false
             ],
             [
@@ -2366,45 +2136,473 @@
             ]
         ]
     },
-    "units": {
-        "one": 1,
-        "two": 2,
-        "three": 3,
-        "four": 4,
-        "five": 5,
-        "six": 6,
-        "seven": 7,
-        "eight": 8,
-        "nine": 9,
-        "ten": 10,
-        "eleven": 11,
-        "twelve": 12,
-        "thirteen": 13,
-        "fourteen": 14,
-        "fifteen": 15,
-        "sixteen": 16,
-        "seventeen": 17,
-        "eighteen": 18,
-        "nineteen": 19,
-        "twenty": 20,
-        "thirty": 30,
-        "fourty": 40,
-        "fifty": 50,
-        "sixty": 60,
-        "seventy": 70,
-        "eighty": 80,
-        "ninety": 90,
-        "hundred": 100,
-        "thousand": 1000,
-        "million": 1000000,
-        "billion": 1000000000,
-        "trillion": 1000000000000,
-        "cent": 0.01,
-        "k": 1000,
-        "m": 1000000,
-        "mil": 1000000,
-        "mn": 1000000,
-        "b": 1000000000,
-        "bn": 1000000000
-    }
+    "keywords": {
+        "Afghanische ": "AFN",
+        "Afghanistan": "AFN",
+        "Albanischer": "ALL",
+        "Albanien": "ALL",
+        "Algerien": "DZD",
+        "Algerischer": "DZD",
+        "Amerika": "USD",
+        "Amerikanischen": "USD",
+        "Angola": "AOA",
+        "Angolanischen": "AOA",
+        "Anguilla": "XCD",
+        "Antigua und Barbuda": "XCD",
+        "Antillen": "ANG",
+        "Argentinischer": "ARS",
+        "Argentinien": "ARS",
+        "Armeense": "AMD",
+        "Armenien": "AMD",
+        "Aruba": "AWG",
+        "Arubaanse": "AWG",
+        "Australischer": "AUD",
+        "Australien": "AUD",
+        "Aserbaidschan": "AZN",
+        "Aserbaidschanische": "AZN",
+        "Bahama": "BSD",
+        "Bahamas": "BSD",
+        "Bahrain": "BHD",
+        "Bangladesch": "BDT",
+        "Barbados": "BBD",
+        "Belize": "BZD",
+        "Bengalisch": "BDT",
+        "Bermuda": "BMD",
+        "Bhutanische": "BTN",
+        "Bhutan": "BTN",
+        "Bolivien": "BOB",
+        "Bolivianische": "BOB",
+        "Bosnien": "BAM",
+        "Konvertible Mark": "BAM",
+        "Bosnien und Herzegowina": "BAM",
+        "Botswanischer": "BWP",
+        "Botswana": "BWP",
+        "Brasilianischer": "BRL",
+        "Brasilien": "BRL",
+        "Britisches": "GBP",
+        "Brunei": "BND",
+        "Bulgarisch": "BGN",
+        "Bulgarien": "BGN",
+        "Burundi": "BIF",
+        "Kambodscha": "KHR",
+        "Khmer": "KHR",
+        "Kambodschanischer": "KHR",
+        "Kanada": "CAD",
+        "Kanadischer": "CAD",
+        "Zentralafrikanische Republik": "XAF",
+        "Franc CFA": "XAF",
+        "CFA": "XAF",
+        "CFP": "XPF",
+        "Chilenischer": "CLP",
+        "Chile": "CLP",
+        "Volksrepublik China": "CNY",
+        "China": "CNY",
+        "Chinesischer": "CNY",
+        "Kolumbien": "COP",
+        "Kolumbianischer": "COP",
+        "Komoren": "KMF",
+        "Demokratische Republik Kongo": "CDF",
+        "Kongo": "CDF",
+        "Costa Rica": "CRC",
+        "Kuba": "CUP",
+        "Kubanischer": "CUP",
+        "Dänische": "DKK",
+        "Dänemark": "DKK",
+        "Dschibuti": "DJF",
+        "Djibouti": "DJF",
+        "Dominica": "XCD",
+        "Dominikanischer": "DOP",
+        "Dominikanische Republik": "DOP",
+        "Ägypten": "EGP",
+        "Ägyptisches": "EGP",
+        "El Salvador": "USD",
+        "Eritrea": "ERN",
+        "Eritreischer": "ERN",
+        "Estnische": "EEK",
+        "Estland": "EEK",
+        "Äthiopischer": "ETB",
+        "Äthiopien": "ETB",
+        "Europäische": "EUR",
+        "Falklandinseln": "FKP",
+        "Falkland": "FKP",
+        "Fidschi-Inseln": "FJD",
+        "Fidschi": "FJD",
+        "Philippinen": "PHP",
+        "Philippinischer": "PHP",
+        "Französisch-Polynesien": "XPF",
+        "Gambia": "GMD",
+        "Gambischer": "GMD",
+        "Georgischer": "GEL",
+        "Georgien": "GEL",
+        "Ghana": "GHS",
+        "Ghanaischer": "GHS",
+        "Gibraltar": "GIP",
+        "Grenada": "XCD",
+        "Guatemala": "GTQ",
+        "Guatemaltekischer": "GTQ",
+        "Guinea": "GNF",
+        "Guinéen": "GNF",
+        "Guyana": "GYD",
+        "Haiti": "HTG",
+        "Haitianische": "HTG",
+        "Honduras": "HNL",
+        "Hondurischer": "HNL",
+        "Hongkong": "HKD",
+        "Ungarische": "HUF",
+        "Ungarn": "HUF",
+        "Island": "ISK",
+        "Isländische": "ISK",
+        "Indien": "INR",
+        "Indische": "INR",
+        "Indonesische": "IDR",
+        "Indonesien": "IDR",
+        "Irakischer": "IQD",
+        "Iranischer": "IRR",
+        "Irak": "IQD",
+        "Iran": "IRR",
+        "Israel": "ILS",
+        "israelische": "ILS",
+        "Jamaika": "JMD",
+        "Japan": "JPY",
+        "Japanischer": "JPY",
+        "Republik Jemen": "YER",
+        "Jemen": "YER",
+        "Jemenitischer": "YER",
+        "Jordanischer": "JOD",
+        "Jordanien": "JOD",
+        "Kaimaninseln": "KYD",
+        "Kaiman": "KYD",
+        "Cayman": "KYD",
+        "Kapverdische": "CVE",
+        "Kap Verde": "CVE",
+        "Kasachischer": "KZT",
+        "Kasachstan": "KZT",
+        "Kenia": "KES",
+        "Kirgisischer": "KGS",
+        "Kirgisistan": "KGS",
+        "Kuwait": "KWD",
+        "Kuwaitischer": "KWD",
+        "Kroatische": "HRK",
+        "Kroatien": "HRK",
+        "Laos": "LAK",
+        "Laotischer": "LAK",
+        "Lesotho": "LSL",
+        "Lesothischer": "LSL",
+        "Libanesisches": "LBP",
+        "Libanon": "LBP",
+        "Liberia": "LRD",
+        "Liberianischer": "LRD",
+        "Libyscher": "LYD",
+        "Libyen": "LYD",
+        "Litauen": "LTL",
+        "Litauische": "LTL",
+        "Macau": "MOP",
+        "Macauische": "MOP",
+        "Mazedonischer": "MKD",
+        "Mazedonien": "MKD",
+        "Madagaskar": "MGA",
+        "Malawi": "MWK",
+        "Malediven": "MVR",
+        "Maledivische": "MVR",
+        "Malaysischer": "MYR",
+        "Malaysia": "MYR",
+        "Marokkanischer": "MAD",
+        "Marokko": "MAD",
+        "Mauritaanse": "MRU",
+        "Mauretanien": "MRU",
+        "Mauritania": "MUR",
+        "Mauritius": "MUR",
+        "Mexikanischer": "MXN",
+        "Mexiko": "MXN",
+        "Moldauischer": "MDL",
+        "Moldau": "MDL",
+        "Mongolei": "MNT",
+        "Mongolischer": "MNT",
+        "Montserrat": "XCD",
+        "Mosambikanischer": "MZN",
+        "Mosambik": "MZN",
+        "Myanmar": "MMK",
+        "Myanmarischer": "MMK",
+        "Namibischer": "NAD",
+        "Namibia": "NAD",
+        "NL-Antillen": "ANG",
+        "Nepal": "NPR",
+        "Nepalesische": "NPR",
+        "Nicaragua": "NIO",
+        "Nicaraguanischer": "NIO",
+        "Neuseeland": "NZD",
+        "Neuseeländischer": "NZD",
+        "Nigeria": "NGN",
+        "Nigerianische": "NGN",
+        "Nordkorea": "KPW",
+        "Nordkoreanischer": "KPW",
+        "Norwegische": "NOK",
+        "Norwegen": "NOK",
+        "Uganda": "UGX",
+        "Ukrainische": "UAH",
+        "Ukraine": "UAH",
+        "Uzbekistanischer": "UZS",
+        "Usbekistan": "UZS",
+        "Omanischer": "OMR",
+        "Oman": "OMR",
+        "Ostkaribische": "XCD",
+        "Pakistanische": "PKR",
+        "Pakistan": "PKR",
+        "Panama": "PAB",
+        "Panamaischer": "PAB",
+        "Papua-Neuguinea": "PGK",
+        "Paraguay": "PYG",
+        "Paraguayischer": "PYG",
+        "Peru": "PEN",
+        "Peruanischer": "PEN",
+        "Polen": "PLN",
+        "Polnischer": "PLN",
+        "Katar": "QAR",
+        "Rumänischer": "RON",
+        "Rumänien": "RON",
+        "Russland": "RUB",
+        "Russischer": "RUB",
+        "Ruanda": "RWF",
+        "Saint Kitts und Nevis": "XCD",
+        "Saint Lucia": "XCD",
+        "Saint Vincent and the Grenadines": "XCD",
+        "Salomonen": "SBD",
+        "Salomon-Inseln": "SBD",
+        "Samoa": "WST",
+        "Samoanischer": "WST",
+        "São Tomé und Príncipe": "STN",
+        "Sao Tome/Príncipe": "STN",
+        "Saudi-Arabien": "SAR",
+        "Saudi": "SAR",
+        "Serbischer": "RSD",
+        "Serbien": "RSD",
+        "Seychellen": "SCR",
+        "Sierra Leone": "SLL",
+        "Sierra-leonischer": "SLL",
+        "Sierraleonische": "SLL",
+        "Singapur": "SGD",
+        "St. Helena": "SHP",
+        "Slowakische": "SKK",
+        "Slowakei": "SKK",
+        "Sudanesisches": "SDG",
+        "Sudan": "SDG",
+        "Somalischer": "SOS",
+        "Somalia": "SOS",
+        "Sri Lanka": "LKR",
+        "Sri-Lanka": "LKR",
+        "Suriname": "SRD",
+        "Swasilädischer": "SZL",
+        "Swasiland": "SZL",
+        "Schweiz": "CHF",
+        "Schweizer": "CHF",
+        "Syrische": "SYP",
+        "Syrien": "SYP",
+        "Tadschikistan": "TJS",
+        "Taiwan": "TWD",
+        "Taiwanesischer": "TWD",
+        "Tanzaniaanse": "TZS",
+        "Tansania": "TZS",
+        "Thailändischer": "THB",
+        "Thailand": "THB",
+        "Tonga": "TOP",
+        "Tongaische": "TOP",
+        "Trinidad und Tobago": "TTD",
+        "Trinidad-und-Tobago": "TTD",
+        "Trinidad/Tobago": "TTD",
+        "Tschechische": "CZK",
+        "Tschechien": "CZK",
+        "Tunesischer": "TND",
+        "Tunesien": "TND",
+        "Türkische ": "TRY",
+        "Türkei": "TRY",
+        "Turkmenistan": "TMT",
+        "Turkmenistan-Neuer": "TMT",
+        "Uruguay": "UYU",
+        "Uruguayischer": "UYU",
+        "VK": "GBP",
+        "VS": "USD",
+        "VAE": "AED",
+        "Vanuatu": "VUV",
+        "Venezolanischer": "VEF",
+        "Venezuela": "VEF",
+        "Vereinigtes Königreich": "GBP",
+        "Vereinigte Arabische Emirate": "AED",
+        "Vereinigte Staaten": "USD",
+        "Vietnam": "VND",
+        "Vietnamesischer": "VND",
+        "Belarus": "BYN",
+        "Weißrussischer": "BYN",
+        "Sambischer": "ZMW",
+        "Sambia": "ZMW",
+        "Südafrikanischer": "ZAR",
+        "Südafrika": "ZAR",
+        "Südkorea": "KRW",
+        "Südkoreanischer": "KRW",
+        "Südsudanesisches": "SSP",
+        "Südsudan": "SSP",
+        "Schweden": "SEK",
+        "Schwedische": "SEK"
+   },
+    "abbrevs": 
+	[
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AUD",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BGN",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BRL",
+        "BSD",
+        "BTC",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CAD",
+        "CDF",
+        "CHF",
+        "CLP",
+        "CNY",
+        "COP",
+        "CRC",
+        "CUC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ERN",
+        "ETB",
+        "EUR",
+        "FJD",
+        "FKP",
+        "GBP",
+        "GEL",
+        "GHS",
+        "GIP",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "INR",
+        "IQD",
+        "IRR",
+        "ISK",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KGS",
+        "KHR",
+        "KMF",
+        "KPW",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LBP",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LTL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "NZD",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SEK",
+        "SGD",
+        "SHP",
+        "SLL",
+        "SOS",
+        "SSP",
+        "SRD",
+        "STN",
+        "SVC",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TMT",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USD",
+        "UYU",
+        "UZS",
+        "VEF",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XCD",
+        "XDR",
+        "XOF",
+        "XPF",
+        "YER",
+        "ZAR",
+        "ZMW"
+   ]
 }

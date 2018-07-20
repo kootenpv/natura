@@ -110,8 +110,12 @@ class FxExchangeRate(BaseExchangeRate):
 
 class FixerIOExchangeRate(BaseExchangeRate):
 
+    def __init__(self, key):
+        BaseExchangeRate.__init__(self)
+        self.key = key
+
     def update_conversion(self, from_currency, to_currency):
-        resp = requests.get("http://api.fixer.io/latest?base={}".format(to_currency))
+        resp = requests.get(" http://data.fixer.io/api/latest?access_key={}&base={}".format(self.key, to_currency))
         resp.raise_for_status()
         table_name = self.__class__.__name__
         rates = resp.json().get('rates', None)

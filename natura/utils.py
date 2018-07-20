@@ -46,7 +46,7 @@ def find_non_overlapping_results(matches):
     results = []
     spans = set()
     for result in matches:
-        if not any(any(a <= x < b or a <= y < b for a, b in spans) for x, y in result.spans):
+        if not any(any(a <= x < b or a < y < b for a, b in spans) for x, y in result.spans):
             spans.update(result.spans)
             results.append(result)
     return results
@@ -61,6 +61,7 @@ seps = [",", ".", "'", " "]
 
 
 def to_number_regex(x):
+    # This does not work if amount has leading . or ,
     x = x.strip()
     result = None
     for comma_sep in seps:
@@ -70,7 +71,7 @@ def to_number_regex(x):
             regex = "^[+-]?"
             regex += "[0-9]{1,3}"
             regex += "(?:[" + thousand_sep + "]?[0-9]{3})*"
-            regex += "([" + comma_sep + "][0-9]{2})?"
+            regex += "([" + comma_sep + "][0-9]{1,2})?"
             regex += "$"
             if re.match(regex, x):
                 try:
