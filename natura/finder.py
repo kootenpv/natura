@@ -4,7 +4,6 @@ import re
 from natura.utils import guess_currency
 from natura.utils import load_locale
 from natura.utils import find_non_overlapping_results
-from natura.conversion_backends import FixerIOExchangeRate
 from natura.classes import *
 from natura.scanner import Scanner
 from natura.scanner import pipe
@@ -12,7 +11,7 @@ from natura.scanner import pipe
 
 class Finder(object):
 
-    def __init__(self, language="US", locale=None, base_currency="EUR", converter=FixerIOExchangeRate()):
+    def __init__(self, language="US", locale=None, base_currency="EUR", converter=None):
         if locale is None:
             locale = load_locale(language)
         self.locale = locale

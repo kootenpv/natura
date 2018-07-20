@@ -5,6 +5,7 @@ import json
 import pytest
 from natura import Finder
 from natura.utils import load_locale
+from natura.conversion_backends import FixerIOExchangeRate
 
 LOCALES = {}
 for name in os.listdir("data/money"):
@@ -321,7 +322,7 @@ def test_mix1(locale_name, money_string):
 def test_default_exchange():
     from_currency = "USD"
     to_currency = "EUR"
-    money = Finder(base_currency=to_currency)
+    money = Finder(base_currency=to_currency, converter=FixerIOExchangeRate("445412d0f6101005e9c56c1bd9ea6b87"))
     import sqlite3
     try:
         mp = money.findall("500{}".format(from_currency))
