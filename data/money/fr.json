@@ -490,7 +490,7 @@
             true
          ]
       ],
-      "manat ":[  
+      "manat":[  
          [  
             "AZN",
             true
@@ -506,7 +506,7 @@
             true
          ]
       ],
-      "metical ":[  
+      "metical":[  
          [  
             "MZN",
             true
@@ -606,7 +606,7 @@
             true
          ]
       ],
-      "réal ":[  
+      "réal":[  
          [  
             "BRL",
             true
@@ -700,7 +700,7 @@
             true
          ]
       ],
-      "shekel ":[  
+      "shekel":[  
          [  
             "ILS",
             true
@@ -724,7 +724,7 @@
             false
          ]
       ],
-      "sol ":[  
+      "sol":[  
          [  
             "PEN",
             true
@@ -806,7 +806,7 @@
             true
          ]
       ],
-      "zloty ":[  
+      "zloty":[  
          [  
             "PLN",
             true
@@ -1302,7 +1302,7 @@
             true
          ]
       ],
-      "de manat ":[  
+      "de manat":[  
          [  
             "AZN",
             true
@@ -1318,7 +1318,7 @@
             true
          ]
       ],
-      "de metical ":[  
+      "de metical":[  
          [  
             "MZN",
             true
@@ -1418,7 +1418,7 @@
             true
          ]
       ],
-      "de réal ":[  
+      "de réal":[  
          [  
             "BRL",
             true
@@ -1512,7 +1512,7 @@
             true
          ]
       ],
-      "de shekel ":[  
+      "de shekel":[  
          [  
             "ILS",
             true
@@ -1536,7 +1536,7 @@
             false
          ]
       ],
-      "de sol ":[  
+      "de sol":[  
          [  
             "PEN",
             true
@@ -1618,7 +1618,7 @@
             true
          ]
       ],
-      "de zloty ":[  
+      "de zloty":[  
          [  
             "PLN",
             true
