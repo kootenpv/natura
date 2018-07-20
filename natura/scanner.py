@@ -21,7 +21,7 @@ class Scanner():
             (self.symbols_to_regex(), self.symbol_regex),
             (r'-?[0-9., ]*[0-9]+', self.to_number),
             (r' |-', self.echo_regex),
-            (pipe(self.locale['units']), self.units_regex),
+            (pipe(self.locale['units'], post=r'\w*\b'), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
             (r'\n', lambda y, x: Skipper(x, y.match.span()))
         ], re.MULTILINE | re.IGNORECASE | re.UNICODE).scan
@@ -48,8 +48,7 @@ class Scanner():
         return None
 
     def units_regex(self, scanner, x):
-        # x.lower() could cause error when capital is important e.g. M(mega) vs m(milli)
-        return TextAmount(float(self.locale['units'][x.lower()]), scanner.match.span())
+        return TextAmount(x.lower(), scanner.match.span())
 
     def handle_keyword(self, scanner, x):
         if x not in self.locale['keywords']:

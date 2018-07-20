@@ -1,4 +1,5 @@
 #prevent ['$', '1', 'M', '2', 'M']
+# issue: Symbol is case insensitive while multiple identical entries exist with varying case (e.g. Afs, AFS)
 import re
 from natura.utils import guess_currency
 from natura.utils import load_locale
@@ -6,6 +7,7 @@ from natura.utils import find_non_overlapping_results
 from natura.conversion_backends import FixerIOExchangeRate
 from natura.classes import *
 from natura.scanner import Scanner
+from natura.scanner import pipe
 
 
 class Finder(object):
@@ -83,12 +85,14 @@ class Finder(object):
 
     def get_money(self, scan_matches, currency_symbol_abbrev, text, return_keywords):
         scan_matches = list(scan_matches)
+        reverse = scan_matches[0].span[0] > scan_matches[-1].span[0]
         strike = 10000
         amounts = []
+        text_amount = []
         start_ends = []
         currencies = []
         clues = [x for x in scan_matches if isinstance(x, Keyword)]
-        for m in scan_matches:
+        for idx, m in enumerate(scan_matches):
             if isinstance(m, currency_symbol_abbrev):
                 amounts.append(None)
                 start_ends.append([m.span])
@@ -103,17 +107,73 @@ class Finder(object):
             elif isinstance(m, Skipper):
                 # issuematic... here be dragons
                 strike += 10
-            elif strike < 2 and isinstance(m, (Amount, TextAmount)):
-                # does not properly work e.g. "three hundred seventy five dollar"
+            elif strike < 2 and isinstance(m, (Amount)):
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
                 strike = 0
                 start_ends[-1].append(m.span)
+            elif strike < 2 and isinstance(m, (TextAmount)):
+                # check if TextAmount is true compound number (e.g. exclude words like 'eenduidig' or 'foursome')
+                end_pattern = pipe(self.locale['units'], pre=r'', post=r'$')
+                if re.search(end_pattern, m.x):
+                    strike = 0
+                    start_ends[-1].append(m.span)
+                    # extract all text numbers from compound number
+                    pattern = pipe(self.locale['units'], pre=r'', post=r'')
+                    matches = re.findall(pattern, m.x)
+                    # convert from text to number
+                    matches = [float(self.locale['units'][x.lower()]) for x in matches]
+                    if reverse:
+                        matches = list(reversed(matches))
+                    text_amount += matches
+                else:
+                    strike += 10
+                if strike < 2 \
+                        and len(scan_matches) > (idx + 1) and isinstance(scan_matches[idx + 1], (TextAmount)):
+                    # don't do anything until the last TextAmount has been reached. Process all as a whole.
+                    None
+                elif len(text_amount) > 0:
+                    if reverse:
+                        text_amount = reversed(text_amount)
+                    amount = self.parse_text_amount(text_amount)
+                    if amount > 0:
+                        amounts[-1] = amounts[-1] * amount if amounts[-1] is not None else amount
+                    text_amount = []
+
         # sort inner spans
         for se in start_ends:
             se.sort()
         return [self.make_money(amount, currency, spans, text)
                 for amount, currency, spans in zip(amounts, currencies, start_ends)
                 if amount is not None]
+
+    def parse_text_amount(self, text_amount):
+        amount = 0
+        singles_tens = 0
+        number_of_units = 0
+        for number in text_amount:
+            if number < 100:
+                if number_of_units < 100:
+                    singles_tens += number
+                else:
+                    number_of_units += number
+            elif number == 100:
+                if singles_tens == 0:
+                    singles_tens = 1
+                number_of_units = 100 * singles_tens
+                singles_tens = 0
+            elif number > 100: # unit 1000, 1000000 etc
+                if number_of_units == 0:
+                    if singles_tens == 0:
+                        singles_tens = 1
+                    number_of_units = singles_tens
+                amount += number * number_of_units
+                singles_tens = 0
+                number_of_units = 0
+        if number_of_units > 0:
+            amount += number_of_units
+        elif singles_tens >0:
+            amount += singles_tens
+        return amount
 
     def make_money(self, amount, currency, spans, text):
         if self.converter:

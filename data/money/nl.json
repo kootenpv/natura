@@ -150,7 +150,7 @@
         ],
         "dobra": [
             [
-                "STD",
+                "STN",
                 true
             ]
         ],
@@ -461,7 +461,7 @@
         "manat": [
             [
                 "TMT",
-                true
+                false
             ],
             [
                 "AZN",
@@ -500,7 +500,7 @@
         ],
         "ouguiya": [
             [
-                "MRO",
+                "MRU",
                 true
             ]
         ],
@@ -810,6 +810,35 @@
         ]
     },
    "units":{  
+      "een":1,
+      "één":1,
+      "twee":2,
+      "drie":3,
+      "vier":4,
+      "vijf":5,
+      "zes":6,
+      "zeven":7,
+      "acht":8,
+      "negen":9,
+      "tien":10,
+      "elf":11,
+      "twaalf":12,
+      "dertien":13,
+      "veertien":14,
+      "vijftien":15,
+      "zestien":16,
+      "zeventien":17,
+      "achttien":18,
+      "negentien":19,
+      "twintig":20,
+      "dertig":30,
+      "veertig":40,
+      "vijftig":50,
+      "zestig":60,
+      "zeventig":70,
+      "tachtig":80,
+      "negentig":90,
+      "honderd":100,
       "duizend":1000,
       "miljoen":1000000,
       "miljard":1000000000,
@@ -1661,7 +1690,7 @@
         ],
         "UM": [
             [
-                "MRO",
+                "MRU",
                 true
             ]
         ],
@@ -2246,8 +2275,8 @@
         "Maleisië": "MYR",
         "Marokkaanse": "MAD",
         "Marokko": "MAD",
-        "Mauritaanse": "MRO",
-        "Mauritanië": "MRO",
+        "Mauritaanse": "MRU",
+        "Mauritanië": "MRU",
         "Mauritiaanse": "MUR",
         "Mauritius": "MUR",
         "Mexicaanse": "MXN",
@@ -2313,8 +2342,8 @@
         "Salomonseilanden": "SBD",
         "Samoa": "WST",
         "Samoaanse": "WST",
-        "Santomese": "STD",
-        "Sao Tomé en Principe": "STD",
+        "Santomese": "STN",
+        "Sao Tomé en Principe": "STN",
         "Saoedi-Arabische": "SAR",
         "Saoedi-Arabië": "SAR",
         "Saoedische": "SAR",
@@ -2340,8 +2369,6 @@
         "Suriname": "SRD",
         "Swazische": "SZL",
         "Swaziland": "SZL",
-        "Zwitzerland": "CHF",
-        "Zwitzerse": "CHF",
         "Syrisch": "SYP",
         "Syrië": "SYP",
         "Tadzjikistaanse": "TJS",
@@ -2489,7 +2516,7 @@
         "MMK",
         "MNT",
         "MOP",
-        "MRO",
+        "MRU",
         "MUR",
         "MVR",
         "MWK",
@@ -2526,7 +2553,7 @@
         "SOS",
         "SSP",
         "SRD",
-        "STD",
+        "STN",
         "SVC",
         "SYP",
         "SZL",
