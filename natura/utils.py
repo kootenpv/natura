@@ -46,7 +46,7 @@ def find_non_overlapping_results(matches):
     results = []
     spans = set()
     for result in matches:
-        if not any(any(a <= x < b or a <= y < b for a, b in spans) for x, y in result.spans):
+        if not any(any(a <= x < b or a < y < b for a, b in spans) for x, y in result.spans):
             spans.update(result.spans)
             results.append(result)
     return results
