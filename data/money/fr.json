@@ -1625,7 +1625,10 @@
          ]
       ]
    },
-   "units":{  
+   "unit_abbrevs":{
+      "dummy_value":1
+   },
+   "units":{
       "et":0,
       "un":1,
       "une":1,

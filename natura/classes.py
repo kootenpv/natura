@@ -9,6 +9,7 @@ Symbol = node("Symbol")
 Currency = node("Currency")
 Amount = node("Amount")
 TextAmount = node("TextAmount")
+TextAmount_Abbrev = node("TextAmount_Abbrev")
 Abbrev = node("Abbrev")
 Skipper = node("Skipper")
 
