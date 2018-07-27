@@ -106,7 +106,7 @@ class Finder(object):
             elif isinstance(m, Skipper):
                 # issuematic... here be dragons
                 strike += 10
-            elif strike < 2 and isinstance(m, (Amount)):
+            elif strike < 2 and isinstance(m, (Amount, TextAmount_Abbrev)):
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
                 strike = 0
                 start_ends[-1].append(m.span)

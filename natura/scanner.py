@@ -22,6 +22,7 @@ class Scanner():
             (r'[., ]', None),
             (r'-?[0-9., ]*[0-9]+', self.to_number),
             (r'-', None),
+            (pipe(self.locale['unit_abbrevs']), self.unit_abbrevs_regex),
             (pipe(self.locale['units'], post=r'\w*\b'), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
             (r'\n', lambda y, x: Skipper(x, y.match.span()))
@@ -43,6 +44,9 @@ class Scanner():
     @staticmethod
     def symbol_regex(scanner, x):
         return Symbol(x.strip(), span=scanner.match.span())
+
+    def unit_abbrevs_regex(self, scanner, x):
+        return TextAmount_Abbrev(self.locale['unit_abbrevs'][x.lower()], scanner.match.span())
 
     def units_regex(self, scanner, x):
         return TextAmount(x.lower(), scanner.match.span())
