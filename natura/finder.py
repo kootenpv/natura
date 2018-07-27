@@ -160,7 +160,9 @@ class Finder(object):
                     singles_tens = 1
                 number_of_units = 100 * singles_tens
                 singles_tens = 0
-            elif number > 100: # unit 1000, 1000000 etc
+            elif number < 1000: # handle spanish irregular multiples of hundreds
+                number_of_units += number
+            elif number >= 1000: # unit 1.000, 1.000.000 etc
                 if number_of_units == 0:
                     if singles_tens == 0:
                         singles_tens = 1

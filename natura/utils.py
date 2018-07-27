@@ -57,25 +57,23 @@ def load_locale(language):
     return json.loads(locale.decode('utf-8'))
 
 
-seps = [",", ".", "'", " "]
-
+seps = [",", "."]
 
 def to_number_regex(x):
-    # This does not work if amount has leading . or ,
-    x = x.strip()
+    x = x.replace(" ", "")
     result = None
-    for comma_sep in seps:
+    for decimal_sep in seps:
         for thousand_sep in seps:
-            if comma_sep == thousand_sep:
+            if decimal_sep == thousand_sep:
                 continue
             regex = "^[+-]?"
             regex += "[0-9]{1,3}"
             regex += "(?:[" + thousand_sep + "]?[0-9]{3})*"
-            regex += "([" + comma_sep + "][0-9]{1,2})?"
+            regex += "([" + decimal_sep + "][0-9]{1,2})?"
             regex += "$"
             if re.match(regex, x):
                 try:
-                    result = float(x.replace(thousand_sep, "").replace(comma_sep, "."))
+                    result = float(x.replace(thousand_sep, "").replace(decimal_sep, "."))
                 except ValueError:
                     continue
                 return result
