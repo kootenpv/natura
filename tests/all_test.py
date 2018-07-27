@@ -330,13 +330,13 @@ def test_text_amount(locale_name):
         money_string = "een miljoen tweehonderdzesenvijftigduizend zevenhonderdeenentwintig dollar"
         generic_test(money_string, money, [1256721, 'USD', 5])
     elif locale_name == 'de':
-        money_string = "eine Million zweihundertsechsundfünfzigtausendsiebenhunderteinundzwanzig Dollar"
+        money_string = u"eine Million zweihundertsechsundfünfzigtausendsiebenhunderteinundzwanzig Dollar"
         generic_test(money_string, money, [1256721, 'USD', 4])
     elif locale_name == 'fr':
         money_string = "un million deux cent cinquante-six mille sept cent vingt et un dollars"
         generic_test(money_string, money, [1256721, 'USD', 13])
     elif locale_name == 'es':
-        money_string = "un millón doscientos cincuenta y seis mil setecientos veintiuno de dólares"
+        money_string = u"un millón doscientos cincuenta y seis mil setecientos veintiuno de dólares"
         generic_test(money_string, money, [1256721, 'USD', 10])
     else:
         assert False, "No test_text_amount for " + locale_name + ".json"
