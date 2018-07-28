@@ -106,7 +106,7 @@ class Finder(object):
             elif isinstance(m, Skipper):
                 # issuematic... here be dragons
                 strike += 10
-            elif strike < 2 and isinstance(m, (Amount)):
+            elif strike < 2 and isinstance(m, (Amount, TextAmount_Abbrev)):
                 amounts[-1] = amounts[-1] * m.x if amounts[-1] is not None else m.x
                 strike = 0
                 start_ends[-1].append(m.span)
@@ -160,7 +160,9 @@ class Finder(object):
                     singles_tens = 1
                 number_of_units = 100 * singles_tens
                 singles_tens = 0
-            elif number > 100: # unit 1000, 1000000 etc
+            elif number < 1000: # handle spanish irregular multiples of hundreds
+                number_of_units += number
+            elif number >= 1000: # unit 1.000, 1.000.000 etc
                 if number_of_units == 0:
                     if singles_tens == 0:
                         singles_tens = 1

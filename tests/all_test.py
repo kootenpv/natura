@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import json
 import pytest
 from natura import Finder
 from natura.utils import load_locale
@@ -15,7 +14,7 @@ for name in os.listdir("data/money"):
 
 default_money = Finder(converter=None)
 
-CURRENT_BAD = [u'.د.ب', u'US$', 'Lek', 'LEK']
+CURRENT_BAD = []
 
 
 def proove(x, y):
@@ -181,12 +180,12 @@ def test_symbol7():
     generic_test(t, None, [500, 'ZWD', 2])
 
 
-def test_symbol7():
+def test_symbol8():
     t = u"(£2,386)"
     generic_test(t, None, [2386, 'GBP', 2])
 
 
-def test_symbol8():
+def test_symbol9():
     t = u"'£2,386'"
     generic_test(t, None, [2386, 'GBP', 2])
 
@@ -265,6 +264,7 @@ def test_symbols(locale_name, money_string, currency_type):
             y_sim = get_default(locale[currency_type][ct])
             generic_test(money_string.format(ms=ct), money, [500, y_sim, 2])
 
+
 currency_types = ['symbols', 'currencies']
 money_strings = [u"500{ms} to 50{ms2}", u"500 {ms} to 50 {ms2}"]
 
@@ -284,6 +284,7 @@ def test_symbols2(locale_name, money_string, currency_type):
             mons = money_string.format(ms=ct, ms2=ct2)
             generic_test(mons, money, [500, y_sim, 2], [50, y_sim2, 2])
 
+
 currency_types = ['currencies']
 money_strings = [u"500 {ms} to {ms2} 50"]
 
@@ -299,9 +300,9 @@ def test_symbols3(locale_name, money_string, currency_type):
     for ct, ct2 in zip(keys1, keys2):
         if ct not in CURRENT_BAD and ct2 not in CURRENT_BAD:
             y_sim = get_default(locale[currency_type][ct])
-            y_sim2 = get_default(locale[currency_type][ct2])
             mons = money_string.format(ms=ct, ms2=ct2)
             generic_test(mons, money, [500, y_sim, 2])
+
 
 money_strings = [u"500 {ms} to 50 {ms2}", u"500 {ms} and 50 {ms2}"]
 
@@ -317,6 +318,28 @@ def test_mix1(locale_name, money_string):
             y_sim2 = get_default(locale['currencies'][ct2])
             mons = money_string.format(ms=ct, ms2=ct2)
             generic_test(mons, money, [500, y_sim, 2], [50, y_sim2, 2])
+
+
+@pytest.mark.parametrize("locale_name", LOCALES)
+def test_text_amount(locale_name):
+    money = Finder(locale_name, converter=None)
+    if locale_name in ['us', 'eur_min', 'us_min']:
+        money_string = "one million two hundred fifty-six thousand seven hundred twenty-one dollar"
+        generic_test(money_string, money, [1256721, 'USD', 12])
+    elif locale_name == 'nl':
+        money_string = "een miljoen tweehonderdzesenvijftigduizend zevenhonderdeenentwintig dollar"
+        generic_test(money_string, money, [1256721, 'USD', 5])
+    elif locale_name == 'de':
+        money_string = u"eine Million zweihundertsechsundfünfzigtausendsiebenhunderteinundzwanzig Dollar"
+        generic_test(money_string, money, [1256721, 'USD', 4])
+    elif locale_name == 'fr':
+        money_string = "un million deux cent cinquante-six mille sept cent vingt et un dollars"
+        generic_test(money_string, money, [1256721, 'USD', 13])
+    elif locale_name == 'es':
+        money_string = u"un millón doscientos cincuenta y seis mil setecientos veintiuno de dólares"
+        generic_test(money_string, money, [1256721, 'USD', 10])
+    else:
+        assert False, "No test_text_amount for " + locale_name + ".json"
 
 
 def test_default_exchange():

@@ -15,12 +15,14 @@ class Scanner():
         self.locale = locale
         # hacky
         self.scan = re.Scanner([
-            (pipe(self.locale['keywords'], pre=r'', post=r'\b'), self.handle_keyword),
             (pipe(self.locale['currencies'], pre=r'', post=r's?\b'), self.currency_regex),
             (pipe(self.locale['abbrevs']), lambda y, x: Abbrev(x, y.match.span())),
             (self.symbols_to_regex(), self.symbol_regex),
+            (pipe(self.locale['keywords'], pre=r'', post=r'\b'), self.handle_keyword),
+            (r'[., ]', None),
             (r'-?[0-9., ]*[0-9]+', self.to_number),
-            (r' |-', self.echo_regex),
+            (r'-', None),
+            (pipe(self.locale['unit_abbrevs']), self.unit_abbrevs_regex),
             (pipe(self.locale['units'], post=r'\w*\b'), self.units_regex),
             (r'.', lambda y, x: Skipper(x, y.match.span())),
             (r'\n', lambda y, x: Skipper(x, y.match.span()))
@@ -43,9 +45,8 @@ class Scanner():
     def symbol_regex(scanner, x):
         return Symbol(x.strip(), span=scanner.match.span())
 
-    @staticmethod
-    def echo_regex(scanner, x):
-        return None
+    def unit_abbrevs_regex(self, scanner, x):
+        return TextAmount_Abbrev(self.locale['unit_abbrevs'][x.lower()], scanner.match.span())
 
     def units_regex(self, scanner, x):
         return TextAmount(x.lower(), scanner.match.span())
