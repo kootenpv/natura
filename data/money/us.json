@@ -927,6 +927,7 @@
         "Hungary": "HUF",
         "Iceland": "ISK",
         "Icelandic": "ISK",
+        "India": "INR",
         "Indian": "INR",
         "Indonesia": "IDR",
         "Indonesian": "IDR",
@@ -2083,6 +2084,12 @@
                 true
             ]
         ],
+        "₿": [
+            [
+                "BTC",
+                true
+            ]
+        ],
         "Ƒ": [
             [
                 "ANG",
@@ -2404,7 +2411,9 @@
         "ninety": 90,
         "hundred": 100,
         "thousand": 1000,
+        "lakh": 100000,
         "million": 1000000,
+        "crore": 10000000,
         "billion": 1000000000,
         "trillion": 1000000000000,
         "cent": 0.01
