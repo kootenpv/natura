@@ -190,6 +190,31 @@ def test_symbol9():
     generic_test(t, None, [2386, 'GBP', 2])
 
 
+def test_symbol10():
+    t = u"'₿ 1'"
+    generic_test(t, None, [1, 'BTC', 2])
+
+
+def test_symbol11():
+    t = u"'₹25.6 Lakh'"
+    generic_test(t, None, [2560000, 'INR', 3])
+
+
+def test_symbol12():
+    t = u"'₹5 Crore'"
+    generic_test(t, None, [50000000, 'INR', 3])
+
+
+def test_symbol13():
+    t = u"'₹70Crore'"
+    generic_test(t, None, [700000000, 'INR', 3])
+
+
+def test_symbol14():
+    t = u"'4 Crore rupees'"
+    generic_test(t, None, [40000000, 'PKR', 3])
+
+
 def test_new_symbol():
     t = "$US10"
     generic_test(t, None, [10, 'USD', 2])
